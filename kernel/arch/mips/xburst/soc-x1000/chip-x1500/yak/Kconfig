@@ -1,0 +1,15 @@
+choice
+prompt "BOARD version"
+depends on PRODUCT_X1500_YAK
+default BOARD_X1500_YAK_V11
+
+config BOARD_X1500_YAK_V11
+bool "yak board v11"
+depends on PRODUCT_X1500_YAK
+
+endchoice
+
+config BOARD_NAME
+string
+default "yak_v11" if BOARD_X1500_YAK_V11
+

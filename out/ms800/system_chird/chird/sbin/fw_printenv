@@ -1,0 +1,23 @@
+#! /bin/sh
+
+chd=chird
+
+cat /$chd/config/ap.cfg
+cat /$chd/config/sta.cfg
+cat /$chd/config/dhcp.cfg
+cat /$chd/config/gpio.cfg
+cat /$chd/config/serial.cfg
+cat /$chd/config/serialproc.cfg
+cat /$chd/config/audio.cfg
+cat /$chd/config/audioproc.cfg
+cat /$chd/config/video.cfg
+cat /$chd/config/videoproc.cfg
+cat /$chd/config/videopre.cfg
+cat /$chd/config/storage.cfg
+cat /$chd/config/alarm.cfg
+cat /$chd/config/network.cfg
+cat /$chd/config/system.cfg
+cat /$chd/config/webcam.cfg
+cat /$chd/config/md.cfg
+cat /$chd/config/other.cfg
+cat /$chd/config/value.cfg

@@ -1,0 +1,18 @@
+
+choice
+	prompt "Platform type"
+	depends on CHIP_X1630
+	default PLATFORM_X1630_IMP
+
+config PLATFORM_X1630_IMP
+	bool "imp"
+
+endchoice
+
+config PRODUCT_NAME
+	string
+	default "imp" if PLATFORM_X1630_IMP
+
+if PLATFORM_X1630_IMP
+source "arch/mips/xburst/soc-x1630/chip-x1630/imp/Kconfig"
+endif

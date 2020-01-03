@@ -1,0 +1,13 @@
+*******************************************
+****** 编译 文件系统的制作过程说明 ********
+
+1. 在源码根目录执行 make 命令会将 device/common/system 整个目录拷贝到 out/product/(xxx平台)/ 目录下
+2. 然后调用 system_patch.sh 脚本对out/product/(xxx平台)/system 修改（打补丁）
+3. 再接着 system.patch 目录下的所有内容 全部拷贝到 out/product/(xxx平台)/system 目录下
+4. 最后由如下命令完成文件系统制作：
+    out/host/tools/mkfs.jffs2 -e 0x8000 -p 0xc80000 -d out/product/(xxx平台)/system -o out/product/(xxx平台)/image/system.jffs2
+
+
+说明：
+ 如果需要对文件系统进行修改、删除或添加内容，把更改内容放到 system.patch 目录下，必要情况下修改 system_patch.sh
+

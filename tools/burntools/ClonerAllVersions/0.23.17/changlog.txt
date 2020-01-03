@@ -1,0 +1,441 @@
+Modify a bug when a burn zipfile error occur
+Author: KangJianyun <jykang@ingenic.cn>
+Date:   Fri Nov 21 15:04:52 2014 +0800
+ cloner/mainwindow.cpp                    |    4 +-
+ core/main.cpp                            |   11 +-
+ core/policy_file.cpp                     |   18 +-
+ core/win32/quazip/JlCompress.cpp         |  522 --------
+ core/win32/quazip/JlCompress.h           |  139 --
+ core/win32/quazip/crypt.h                |  135 --
+ core/win32/quazip/ioapi.h                |  207 ---
+ core/win32/quazip/qioapi.cpp             |  361 -----
+ core/win32/quazip/quaadler32.cpp         |   53 -
+ core/win32/quazip/quaadler32.h           |   54 -
+ core/win32/quazip/quachecksum32.h        |   78 --
+ core/win32/quazip/quacrc32.cpp           |   52 -
+ core/win32/quazip/quacrc32.h             |   50 -
+ core/win32/quazip/quagzipfile.cpp        |  172 ---
+ core/win32/quazip/quagzipfile.h          |  108 --
+ core/win32/quazip/quaziodevice.cpp       |  320 -----
+ core/win32/quazip/quaziodevice.h         |   98 --
+ core/win32/quazip/quazip.cpp             |  788 -----------
+ core/win32/quazip/quazip.dll             |  Bin 143360 -> 0 bytes
+ core/win32/quazip/quazip.h               |  571 --------
+ core/win32/quazip/quazip.lib             |  Bin 772402 -> 0 bytes
+ core/win32/quazip/quazip.pri             |   35 -
+ core/win32/quazip/quazip.pro             |   83 --
+ core/win32/quazip/quazip.sln             |   20 -
+ core/win32/quazip/quazip.vcproj          |  314 -----
+ core/win32/quazip/quazip.vcxproj         |  121 --
+ core/win32/quazip/quazip.vcxproj.filters |  117 --
+ core/win32/quazip/quazip_global.h        |   59 -
+ core/win32/quazip/quazipdir.cpp          |  567 --------
+ core/win32/quazip/quazipdir.h            |  223 ----
+ core/win32/quazip/quazipfile.cpp         |  502 -------
+ core/win32/quazip/quazipfile.h           |  456 -------
+ core/win32/quazip/quazipfileinfo.cpp     |  176 ---
+ core/win32/quazip/quazipfileinfo.h       |  172 ---
+ core/win32/quazip/quazipnewinfo.cpp      |  277 ----
+ core/win32/quazip/quazipnewinfo.h        |  207 ---
+ core/win32/quazip/run_moc.bat            |    3 -
+ core/win32/quazip/unzip.c                | 2155 ------------------------------
+ core/win32/quazip/unzip.h                |  458 -------
+ core/win32/quazip/zconf.h                |  431 ------
+ core/win32/quazip/zip.c                  | 2103 -----------------------------
+ core/win32/quazip/zip.h                  |  390 ------
+ core/win32/quazip/zlib.h                 | 1622 ----------------------
+ 43 files changed, 21 insertions(+), 14211 deletions(-)
+commit 44ce4e1b3ff6d652ea1b07deaa9dcad4bd58c04c
+
+1.support zip and unzip on ubuntu system
+2.add mofiied rate of spi
+3.update spl and uboot.bin
+4.update cloner version to 0.23.15
+Author: KangJianyun <jykang@ingenic.cn>
+Date:   Thu Nov 13 17:36:15 2014 +0800
+ cloner/cloner.pro                                  |   10 +
+ cloner/compressthread.cpp                          |    2 +-
+ cloner/compressthread.h                            |    4 +-
+ cloner/dialog_config.cpp                           |    5 +-
+ cloner/dialog_config.ui                            |   56 +-
+ cloner/mainwindow.cpp                              |   12 +-
+ cloner/mainwindow.h                                |    1 -
+ cloner/quazip/libquazip.a                          |  Bin 0 -> 308120 bytes
+ cloner/quazip/quazip.dll                           |  Bin 143360 -> 143360 bytes
+ cloner/quazip/quazip.lib                           |  Bin 772402 -> 772390 bytes
+ cloner/quazip/zconf.h                              |  862 +++---
+ cloner/quazip/zlib.h                               | 3244 ++++++++++----------
+ core/core.pro                                      |    9 +-
+ core/device.cpp                                    |    1 +
+ core/global_info.h                                 |    1 +
+ core/main.cpp                                      |    4 +
+ core/quazip/JlCompress.cpp                         |  522 ++++
+ core/quazip/JlCompress.h                           |  139 +
+ core/quazip/crypt.h                                |  135 +
+ core/quazip/ioapi.h                                |  207 ++
+ core/quazip/qioapi.cpp                             |  361 +++
+ core/quazip/quaadler32.cpp                         |   53 +
+ core/quazip/quaadler32.h                           |   54 +
+ core/quazip/quachecksum32.h                        |   78 +
+ core/quazip/quacrc32.cpp                           |   52 +
+ core/quazip/quacrc32.h                             |   50 +
+ core/quazip/quagzipfile.cpp                        |  172 ++
+ core/quazip/quagzipfile.h                          |  108 +
+ core/quazip/quaziodevice.cpp                       |  320 ++
+ core/quazip/quaziodevice.h                         |   98 +
+ core/quazip/quazip.cpp                             |  788 +++++
+ core/quazip/quazip.dll                             |  Bin 0 -> 143360 bytes
+ core/quazip/quazip.h                               |  571 ++++
+ core/quazip/quazip.lib                             |  Bin 0 -> 772390 bytes
+ core/quazip/quazip.pri                             |   35 +
+ core/quazip/quazip.pro                             |   83 +
+ core/quazip/quazip.sln                             |   20 +
+ core/quazip/quazip.vcproj                          |  314 ++
+ core/quazip/quazip.vcxproj                         |  121 +
+ core/quazip/quazip.vcxproj.filters                 |  117 +
+ core/quazip/quazip_global.h                        |   59 +
+ core/quazip/quazipdir.cpp                          |  567 ++++
+ core/quazip/quazipdir.h                            |  223 ++
+ core/quazip/quazipfile.cpp                         |  502 +++
+ core/quazip/quazipfile.h                           |  456 +++
+ core/quazip/quazipfileinfo.cpp                     |  176 ++
+ core/quazip/quazipfileinfo.h                       |  172 ++
+ core/quazip/quazipnewinfo.cpp                      |  277 ++
+ core/quazip/quazipnewinfo.h                        |  207 ++
+ core/quazip/run_moc.bat                            |    3 +
+ core/quazip/unzip.c                                | 2155 +++++++++++++
+ core/quazip/unzip.h                                |  458 +++
+ core/quazip/zconf.h                                |  431 +++
+ core/quazip/zip.c                                  | 2103 +++++++++++++
+ core/quazip/zip.h                                  |  390 +++
+ core/quazip/zlib.h                                 | 1622 ++++++++++
+ core/unix/libquazip.a                              |  Bin 0 -> 308120 bytes
+ core/win32/quazip.lib                              |  Bin 0 -> 772390 bytes
+ release/configs/m200/derodo_mmc_lpddr2_android.cfg |    2 +-
+ release/configs/platforms.cfg                      |    2 +-
+ release/firmwares/jz4775/spl_ddr2.bin              |  Bin 10096 -> 10096 bytes
+ release/firmwares/jz4775/spl_ddr3.bin              |  Bin 10368 -> 10368 bytes
+ release/firmwares/jz4775/spl_lpddr.bin             |  Bin 11984 -> 11984 bytes
+ release/firmwares/jz4775/uboot.bin                 |  Bin 488064 -> 488684 bytes
+ release/firmwares/jz4780/spl_ddr3.bin              |  Bin 10116 -> 10116 bytes
+ release/firmwares/jz4780/spl_lpddr.bin             |  Bin 9732 -> 9732 bytes
+ release/firmwares/jz4780/spl_lpddr2.bin            |  Bin 10132 -> 10132 bytes
+ release/firmwares/jz4780/uboot.bin                 |  Bin 513548 -> 514272 bytes
+ release/firmwares/m200/spl_ddr3.bin                |  Bin 18740 -> 20788 bytes
+ release/firmwares/m200/spl_lpddr.bin               |  Bin 18372 -> 20420 bytes
+ release/firmwares/m200/spl_lpddr2.bin              |  Bin 18756 -> 20804 bytes
+ release/firmwares/m200/uboot.bin                   |  Bin 215764 -> 518224 bytes
+ 72 files changed, 16344 insertions(+), 2070 deletions(-)
+commit 65e505db4f370a2d39dc00646cf03e5044ca7451
+
+Support zip package file burn function and update qm file
+Author: KangJianyun <jykang@ingenic.cn>
+Date:   Fri Nov 7 09:01:22 2014 +0800
+ cloner/burner.h                          |    3 +-
+ cloner/cloner.pro                        |    5 +-
+ cloner/compressprogress.cpp              |    2 +-
+ cloner/compressprogress.h                |    1 -
+ cloner/dialog_config.ui                  |    2 +-
+ cloner/mainwindow.cpp                    |  205 +-
+ cloner/mainwindow.h                      |   10 +
+ cloner/mainwindow.ui                     |  171 +-
+ cloner/qm_cn.ts                          |  333 +--
+ cloner/qm_us.ts                          |  339 ++--
+ cloner/quazip/quazip.dll                 |  Bin 143360 -> 143360 bytes
+ cloner/quazip/quazip.lib                 |  Bin 72990 -> 772402 bytes
+ cloner/quazip/zconf.h                    |  862 ++++----
+ cloner/quazip/zlib.h                     | 3244 +++++++++++++++---------------
+ core/burner.h                            |    3 +-
+ core/core.pro                            |   21 +-
+ core/device.cpp                          |    6 +-
+ core/libusb.h                            |    2 +-
+ core/main.cpp                            |   23 +
+ core/main.h                              |    1 +
+ core/policy_file.cpp                     |   44 +
+ core/policy_file.h                       |   25 +
+ core/win32/quazip/JlCompress.cpp         |  522 +++++
+ core/win32/quazip/JlCompress.h           |  139 ++
+ core/win32/quazip/crypt.h                |  135 ++
+ core/win32/quazip/ioapi.h                |  207 ++
+ core/win32/quazip/qioapi.cpp             |  361 ++++
+ core/win32/quazip/quaadler32.cpp         |   53 +
+ core/win32/quazip/quaadler32.h           |   54 +
+ core/win32/quazip/quachecksum32.h        |   78 +
+ core/win32/quazip/quacrc32.cpp           |   52 +
+ core/win32/quazip/quacrc32.h             |   50 +
+ core/win32/quazip/quagzipfile.cpp        |  172 ++
+ core/win32/quazip/quagzipfile.h          |  108 +
+ core/win32/quazip/quaziodevice.cpp       |  320 +++
+ core/win32/quazip/quaziodevice.h         |   98 +
+ core/win32/quazip/quazip.cpp             |  788 ++++++++
+ core/win32/quazip/quazip.dll             |  Bin 0 -> 143360 bytes
+ core/win32/quazip/quazip.h               |  571 ++++++
+ core/win32/quazip/quazip.lib             |  Bin 0 -> 772402 bytes
+ core/win32/quazip/quazip.pri             |   35 +
+ core/win32/quazip/quazip.pro             |   83 +
+ core/win32/quazip/quazip.sln             |   20 +
+ core/win32/quazip/quazip.vcproj          |  314 +++
+ core/win32/quazip/quazip.vcxproj         |  121 ++
+ core/win32/quazip/quazip.vcxproj.filters |  117 ++
+ core/win32/quazip/quazip_global.h        |   59 +
+ core/win32/quazip/quazipdir.cpp          |  567 ++++++
+ core/win32/quazip/quazipdir.h            |  223 ++
+ core/win32/quazip/quazipfile.cpp         |  502 +++++
+ core/win32/quazip/quazipfile.h           |  456 +++++
+ core/win32/quazip/quazipfileinfo.cpp     |  176 ++
+ core/win32/quazip/quazipfileinfo.h       |  172 ++
+ core/win32/quazip/quazipnewinfo.cpp      |  277 +++
+ core/win32/quazip/quazipnewinfo.h        |  207 ++
+ core/win32/quazip/run_moc.bat            |    3 +
+ core/win32/quazip/unzip.c                | 2155 ++++++++++++++++++++
+ core/win32/quazip/unzip.h                |  458 +++++
+ core/win32/quazip/zconf.h                |  431 ++++
+ core/win32/quazip/zip.c                  | 2103 +++++++++++++++++++
+ core/win32/quazip/zip.h                  |  390 ++++
+ core/win32/quazip/zlib.h                 | 1622 +++++++++++++++
+ release/firmwares/jz4775/uboot.bin       |  Bin 487944 -> 488064 bytes
+ release/qm_cn.qm                         |  Bin 9695 -> 9969 bytes
+ 64 files changed, 17065 insertions(+), 2436 deletions(-)
+commit 1ef5f7ed298e52978c581943080fbac041b9b179
+
+
+Support compress file to zip function
+Author: KangJianyun <jykang@ingenic.cn>
+Date:   Mon Nov 3 17:46:55 2014 +0800
+ cloner/cloner.pro                    |   16 +-
+ cloner/compressprogress.cpp          |   55 +
+ cloner/compressprogress.h            |   36 +
+ cloner/compressprogress.ui           |   57 +
+ cloner/compressthread.cpp            |  270 +++++
+ cloner/compressthread.h              |   32 +
+ cloner/dialog_config.cpp             |   29 +
+ cloner/dialog_config.h               |    5 +
+ cloner/dialog_config.ui              |   15 +-
+ cloner/policy_manager.cpp            |    9 +
+ cloner/policy_manager.h              |    1 +
+ cloner/quazip/JlCompress.cpp         |  522 ++++++++
+ cloner/quazip/JlCompress.h           |  139 +++
+ cloner/quazip/crypt.h                |  135 +++
+ cloner/quazip/ioapi.h                |  207 ++++
+ cloner/quazip/qioapi.cpp             |  361 ++++++
+ cloner/quazip/quaadler32.cpp         |   53 +
+ cloner/quazip/quaadler32.h           |   54 +
+ cloner/quazip/quachecksum32.h        |   78 ++
+ cloner/quazip/quacrc32.cpp           |   52 +
+ cloner/quazip/quacrc32.h             |   50 +
+ cloner/quazip/quagzipfile.cpp        |  172 +++
+ cloner/quazip/quagzipfile.h          |  108 ++
+ cloner/quazip/quaziodevice.cpp       |  320 +++++
+ cloner/quazip/quaziodevice.h         |   98 ++
+ cloner/quazip/quazip.cpp             |  788 +++++++++++++
+ cloner/quazip/quazip.dll             |  Bin 0 -> 143360 bytes
+ cloner/quazip/quazip.h               |  571 +++++++++
+ cloner/quazip/quazip.lib             |  Bin 0 -> 72990 bytes
+ cloner/quazip/quazip.pri             |   35 +
+ cloner/quazip/quazip.pro             |   83 ++
+ cloner/quazip/quazip.sln             |   20 +
+ cloner/quazip/quazip.vcproj          |  314 +++++
+ cloner/quazip/quazip.vcxproj         |  121 ++
+ cloner/quazip/quazip.vcxproj.filters |  117 ++
+ cloner/quazip/quazip_global.h        |   59 +
+ cloner/quazip/quazipdir.cpp          |  567 +++++++++
+ cloner/quazip/quazipdir.h            |  223 ++++
+ cloner/quazip/quazipfile.cpp         |  502 ++++++++
+ cloner/quazip/quazipfile.h           |  456 +++++++
+ cloner/quazip/quazipfileinfo.cpp     |  176 +++
+ cloner/quazip/quazipfileinfo.h       |  172 +++
+ cloner/quazip/quazipnewinfo.cpp      |  277 +++++
+ cloner/quazip/quazipnewinfo.h        |  207 ++++
+ cloner/quazip/run_moc.bat            |    3 +
+ cloner/quazip/unzip.c                | 2155 ++++++++++++++++++++++++++++++++++
+ cloner/quazip/unzip.h                |  458 ++++++++
+ cloner/quazip/zconf.h                |  431 +++++++
+ cloner/quazip/zip.c                  | 2103 +++++++++++++++++++++++++++++++++
+ cloner/quazip/zip.h                  |  390 ++++++
+ cloner/quazip/zlib.h                 | 1622 +++++++++++++++++++++++++
+ 51 files changed, 14720 insertions(+), 4 deletions(-)
+commit 4e28184b5be5e6d3ec2ce505a65187ea0da84a4f
+
+
+update spl.bin and uboot.bin and update cloner version to 0.23.1
+Author: KangJianyun <jykang@ingenic.cn>
+Date:   Tue Oct 28 15:05:27 2014 +0800
+ release/configs/platforms.cfg           |    2 +-
+ release/firmwares/jz4775/spl_ddr2.bin   |  Bin 0 -> 10096 bytes
+ release/firmwares/jz4775/spl_ddr3.bin   |  Bin 10192 -> 10368 bytes
+ release/firmwares/jz4775/spl_lpddr.bin  |  Bin 12144 -> 11984 bytes
+ release/firmwares/jz4775/uboot.bin      |  Bin 498268 -> 487944 bytes
+ release/firmwares/jz4780/spl_ddr3.bin   |  Bin 10548 -> 10116 bytes
+ release/firmwares/jz4780/spl_lpddr.bin  |  Bin 10148 -> 9732 bytes
+ release/firmwares/jz4780/spl_lpddr2.bin |  Bin 10596 -> 10132 bytes
+ release/firmwares/jz4780/uboot.bin      |  Bin 503804 -> 513548 bytes
+ release/firmwares/m200/spl_ddr3.bin     |  Bin 21236 -> 18740 bytes
+ release/firmwares/m200/spl_lpddr.bin    |  Bin 18804 -> 18372 bytes
+ release/firmwares/m200/spl_lpddr2.bin   |  Bin 19236 -> 18756 bytes
+ release/firmwares/m200/uboot.bin        |  Bin 507760 -> 215764 bytes
+ 13 files changed, 1 insertion(+), 1 deletion(-)
+commit bab39217518b22f23822a5104b98c86f56884443
+
+support a modified transfersize
+Author: KangJianyun <jykang@ingenic.cn>
+Date:   Tue Oct 28 11:21:18 2014 +0800
+ cloner/dialog_config.cpp |   12 ++++++
+ cloner/dialog_config.ui  |  101 ++++++++++++++++++++++++++++------------------
+ core/device.cpp          |   11 +++--
+ core/device.h            |    1 +
+ 4 files changed, 83 insertions(+), 42 deletions(-)
+commit 098df7e83a02b3d241e253377f6cea765c0cdece
+
+
+Author: KangJianyun <jykang@ingenic.cn>
+Date:   Mon Oct 27 13:52:50 2014 +0800
+    Modify spi_args struct
+ cloner/dialog_config.cpp |    9 +-
+ cloner/dialog_config.ui  |   52 +++++--
+ cloner/qm_cn.ts          |  335 ++++++++++++++++++++++++++--------------------
+ cloner/qm_us.ts          |  333 +++++++++++++++++++++++++--------------------
+ core/device.cpp          |    7 +-
+ core/global_info.h       |    3 +-
+ 6 files changed, 426 insertions(+), 313 deletions(-)
+commit 409c84c751561756e5cd6e3dd910e96717860ec0
+
+1, Modify gemini support
+    	2, Add jz4775 spl firmware support 26M extal
+    	3, Del jz4775 lpddr2 support(chip not support)
+    	4, Modify W94AD6KB ddr config
+Author: cli <cli@ingenic.cn>
+Date:   Fri Oct 24 16:14:46 2014 +0800
+     Changes to be committed:
+    	modified:   release/configs/jz4775/gemini_mmc_lpddr.cfg
+    	modified:   release/ddrs/LPDDR/MDDR_W94AD6KB-HX51.cfg
+    	modified:   release/firmwares/jz4775/config.cfg
+    	modified:   release/firmwares/jz4775/spl_lpddr.bin
+    	deleted:    release/firmwares/jz4775/spl_lpddr2.bin
+
+ release/configs/jz4775/gemini_mmc_lpddr.cfg |  284 +++++++++++++--------------
+ release/ddrs/LPDDR/MDDR_W94AD6KB-HX51.cfg   |   24 ++-
+ release/firmwares/jz4775/config.cfg         |   14 +-
+ release/firmwares/jz4775/spl_lpddr.bin      |  Bin 11808 -> 12144 bytes
+ release/firmwares/jz4775/spl_lpddr2.bin     |  Bin 9456 -> 0 bytes
+ 5 files changed, 162 insertions(+), 160 deletions(-)
+commit 6022cb91f9054c1b7f07e5dabf84a2d5c8969be5
+
+
+Add spi ops to cloner
+Author: KangJianyun <jykang@ingenic.cn>
+Date:   Fri Oct 24 12:14:13 2014 +0800 
+ cloner/burner.h             |    5 ++-
+ cloner/dialog_config.cpp    |   24 ++++++++++-
+ cloner/dialog_config.h      |    2 +
+ cloner/dialog_config.ui     |   93 ++++++++++++++++++++++++++++++++++++++++++-
+ core/device.cpp             |    8 ++++
+ core/device.h               |    1 +
+ core/global_info.h          |    8 ++++
+ core/serial_devlistener.cpp |   14 +++----
+ 8 files changed, 144 insertions(+), 11 deletions(-)
+commit 9c57bc30ab990c81715f98673e1a83b260bd6e8e
+
+
+ support ddr2 burn for cloner
+Author: KangJianyun <jykang@ingenic.cn>
+Date:   Wed Oct 8 15:22:47 2014 +0800
+ cloner/ddr_manager.cpp    |   36 ++++++++++++++++++++++++++++++++++++
+ cloner/ddr_manager.h      |    1 +
+ core/ddr_param_parser.cpp |   40 ++++++++++++++++++++++++++++++++++++++++
+ core/ddr_param_parser.h   |    1 +
+ core/ddr_params.h         |   32 ++++++++++++++++++++++++++++++++
+ 5 files changed, 110 insertions(+)
+commit 461569bcb6871995c7da24dee83e1e004b0521a1
+
+
+Support serial port burner
+Author: KangJianyun <jykang@ingenic.cn>
+Date:   Thu Aug 28 16:52:21 2014 +0800
+ cloner/dialog_config.cpp      |   10 +
+ cloner/dialog_config.ui       |   48 ++-
+ core/core.pro                 |   13 +-
+ core/main.cpp                 |   15 +-
+ core/main.h                   |    2 +
+ core/serial_devlistener.cpp   |  169 +++++++++++
+ core/serial_devlistener.h     |   49 ++++
+ core/serial_protocol.cpp      |  644 +++++++++++++++++++++++++++++++++++++++++
+ core/serial_protocol.h        |   54 ++++
+ release/configs/platforms.cfg |    1 +
+ 10 files changed, 997 insertions(+), 8 deletions(-)
+commit cdf674e20f39aa17a42fe7231e78bcdde9173f12
+
+
+
+1.add a policy to burn sn(read file) 2.update stage1 code and stage2 code 3.update version to 0.21.1
+Author: KangJianyun <jykang@ingenic.cn>
+Date:   Thu Aug 21 16:02:01 2014 +0800   
+ cloner/policy.cpp                                 |    5 +-
+ core/core.pro                                     |    6 ++-
+ core/device.cpp                                   |    7 ++-
+ core/device.h                                     |    1 +
+ core/policy_sn_device.cpp                         |   56 +++++++++++++++++++++
+ core/policy_sn_device.h                           |   38 ++++++++++++++
+ release/configs/platforms.cfg                     |    2 +-
+ release/configs/sn_device.cfg                     |   11 ++++
+ release/ddrs/LPDDR2/LPDDR2_H9TP32A4GDCC_PRKGM.cfg |   52 +++++++++++++++++++
+ release/firmwares/jz4775/spl_ddr3.bin             |  Bin 10224 -> 10192 bytes
+ release/firmwares/jz4775/spl_lpddr.bin            |  Bin 11664 -> 11808 bytes
+ release/firmwares/jz4775/uboot.bin                |  Bin 496140 -> 498268 bytes
+ release/firmwares/jz4780/spl_ddr3.bin             |  Bin 10548 -> 10548 bytes
+ release/firmwares/jz4780/spl_lpddr.bin            |  Bin 10148 -> 10148 bytes
+ release/firmwares/jz4780/spl_lpddr2.bin           |  Bin 10580 -> 10596 bytes
+ release/firmwares/jz4780/uboot.bin                |  Bin 501708 -> 503804 bytes
+ release/firmwares/m200/spl_ddr3.bin               |  Bin 15764 -> 21236 bytes
+ release/firmwares/m200/spl_lpddr.bin              |  Bin 15380 -> 18804 bytes
+ release/firmwares/m200/spl_lpddr2.bin             |  Bin 15812 -> 19236 bytes
+ release/firmwares/m200/uboot.bin                  |  Bin 203832 -> 507760 bytes
+ 20 files changed, 173 insertions(+), 5 deletions(-)
+commit e15e1bdf1891a87929e222611ff8a3f793392049
+
+Add gemini support
+Author: cli <cli@ingenic.cn>
+Date:   Thu Aug 21 11:53:01 2014 +0800
+ release/configs/jz4775/gemini_mmc_lpddr.cfg |  142 +++++++++++++++++++++++++++
+ release/ddrs/LPDDR/MDDR_W94AD6KB-HX51.cfg   |   36 +++++++
+ release/firmwares/jz4775/config.cfg         |    3 +-
+ 3 files changed, 180 insertions(+), 1 deletion(-)
+commit 0bd9566e0b9a9ce88e1dd6b531ac0faaf563c867
+
+
+add nand partition reserve funtion and update .cfg files and spl.bin and uboot.bin
+Author: KangJianyun <jykang@ingenic.cn>
+Date:   Thu Jul 24 15:35:56 2014 +0800
+ cloner/dialog_config.cpp                           |    8 +-
+ cloner/dialog_config.h                             |    2 +
+ cloner/dialog_config.ui                            |   85 +--
+ cloner/nand_manager.cpp                            |  244 ++++++++-
+ cloner/nand_manager.h                              |   11 +-
+ cloner/qm_cn.ts                                    |  472 ++++++++---------
+ cloner/qm_us.ts                                    |  552 +++++++-------------
+ core/global_info.h                                 |    1 +
+ core/nand_param_parser.cpp                         |    9 +
+ release/configs/jz4775/mensa_mmc_ddr3_android.cfg  |    2 +
+ release/configs/jz4775/mensa_mmc_lpddr_android.cfg |    2 +
+ release/configs/jz4775/mensa_nand_ddr3_android.cfg |    2 +
+ .../configs/jz4775/mensa_nand_lpddr_android.cfg    |    2 +
+ release/configs/jz4775/newton_mmc_lpddr.cfg        |    2 +
+ release/configs/jz4780/grus_mmc_ddr3_android.cfg   |    2 +
+ release/configs/jz4780/grus_mmc_lpddr2_android.cfg |    2 +
+ release/configs/jz4780/grus_nand_ddr3_android.cfg  |    2 +
+ .../configs/jz4780/grus_nand_lpddr2_android.cfg    |    4 +-
+ release/configs/m200/derodo_mmc_lpddr2_android.cfg |  175 +++++++
+ release/configs/m200/f4785_mmc_ddr3_android.cfg    |  306 +++++------
+ release/firmwares/jz4775/spl_ddr3.bin              |  Bin 10208 -> 10224 bytes
+ release/firmwares/jz4775/spl_lpddr.bin             |  Bin 11648 -> 11664 bytes
+ release/firmwares/jz4775/uboot.bin                 |  Bin 494320 -> 496140 bytes
+ release/firmwares/jz4780/spl_ddr3.bin              |  Bin 10532 -> 10548 bytes
+ release/firmwares/jz4780/spl_lpddr.bin             |  Bin 10148 -> 10148 bytes
+ release/firmwares/jz4780/spl_lpddr2.bin            |  Bin 10580 -> 10580 bytes
+ release/firmwares/jz4780/uboot.bin                 |  Bin 499872 -> 501708 bytes
+ release/firmwares/m200/spl_ddr3.bin                |  Bin 15300 -> 15764 bytes
+ release/firmwares/m200/spl_lpddr.bin               |  Bin 14916 -> 15380 bytes
+ release/firmwares/m200/spl_lpddr2.bin              |  Bin 15348 -> 15812 bytes
+ release/firmwares/m200/uboot.bin                   |  Bin 198592 -> 203832 bytes
+ release/qm_cn.qm                                   |  Bin 10009 -> 9695 bytes
+ 32 files changed, 1071 insertions(+), 814 deletions(-)
+commit dbea24e002490128df715b75738f473bd20dc1f5

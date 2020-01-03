@@ -1,0 +1,1 @@
+obj-$(CONFIG_CC1101_915M)		+= cc1101.o

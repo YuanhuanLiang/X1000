@@ -1,0 +1,15 @@
+
+
+if [ $# != 1 ];then
+        echo "chd_speedtest <url>"
+	echo "    url :  eg. 192.168.100.159:8080"
+        exit 1
+fi
+
+url="$1"
+
+# build /tmp/test size=8MB 
+dd if=/dev/zero of=/tmp/test bs=1M count=8
+
+wget -o /tmp/wget.log --post-file=/tmp/test $url/speed -O /dev/null
+

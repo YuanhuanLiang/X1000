@@ -1,0 +1,11 @@
+*.o
+.cproject
+.project
+.tmp
+.config
+/out
+
+# ctags file
+tags
+TAGS
+.tags*

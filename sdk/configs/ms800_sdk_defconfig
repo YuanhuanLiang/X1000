@@ -1,0 +1,459 @@
+ #
+ #  Copyright (C) 2017, Zhang YanMing <yanmin.zhang@ingenic.com, jamincheung@126.com>
+ #
+ #  Ingenic Linux plarform SDK project
+ #
+ #  This program is free software; you can redistribute it and/or modify it
+ #  under  the terms of the GNU General  Public License as published by the
+ #  Free Software Foundation;  either version 2 of the License, or (at your
+ #  option) any later version.
+ #
+ #  You should have received a copy of the GNU General Public License along
+ #  with this program; if not, write to the Free Software Foundation, Inc.,
+ #  675 Mass Ave, Cambridge, MA 02139, USA.
+ #
+ #
+
+
+#####################################################
+#
+# NOTICE: must define the device name!!!
+#
+#####################################################
+CONFIG_TARGET_DEVICE=ms800
+
+#####################################################
+#
+# Debug
+#
+#####################################################
+CONFIG_LOCAL_DEBUG=n
+CONFIG_DEBUG_TIMESTAMP=y
+CONFIG_DEBUG_DHCP=n
+CONFIG_DEBUG_MXML=n
+
+
+#####################################################
+#
+# Library
+#
+#####################################################
+
+#
+# Fingerprint - Microarray
+#
+CONFIG_LIB_FINGERPRINT_MA=n
+
+#
+# Fingerprint - Goodix
+#
+CONFIG_LIB_FINGERPRINT_GD=n
+
+#
+# Fingerprint - FPC
+#
+CONFIG_LIB_FINGERPRINT_FPC=n
+
+#
+# Fingerprint - byd
+#
+CONFIG_LIB_FINGERPRINT_BYD=n
+
+#
+# Face
+#
+CONFIG_LIB_FACE_JIUFENG=n
+CONFIG_LIB_FACE_EI=n
+#
+# Alsa lib
+#
+CONFIG_LIB_ALSA=n
+
+#
+# Openssl lib
+#
+CONFIG_LIB_OPENSSL=n
+
+#
+# Base64 libray
+#
+CONFIG_LIB_BASE64=n
+
+#
+# MXML lib
+#
+CONFIG_LIB_MXML=n
+
+#
+# ZLIB
+#
+CONFIG_LIB_ZLIB=n
+
+#
+# PNG lib
+#
+CONFIG_LIB_PNG=n
+
+#
+# CRC lib
+#
+CONFIG_LIB_CRC=n
+
+#
+# Serial lib
+#
+CONFIG_LIB_SERIAL=y
+
+#
+# I2C lib
+#
+CONFIG_LIB_I2C=y
+
+#
+# MTD lib
+#
+CONFIG_LIB_MTD=n
+
+#
+# GPIO lib
+#
+CONFIG_LIB_GPIO=y
+
+#
+# Mini-zip lib
+#
+CONFIG_LIB_MINI_ZIP=n
+
+#
+# WPA_CLI lib
+#
+CONFIG_LIB_WPA_CLI=y
+
+#
+# DHCP lib
+#
+CONFIG_LIB_DHCP=y
+
+#
+# cJSON lib
+#
+CONFIG_LIB_CJSON=n
+
+#
+# hw jepg
+#
+CONFIG_LIB_HW_JPEG=n
+
+#
+# QRcode
+#
+CONFIG_LIB_QRCODE_TUTENG=y
+
+#####################################################
+#
+# Manager
+#
+#####################################################
+
+#
+# Ring buffer
+#
+CONFIG_RING_BUFFER=y
+
+#
+# Netlink manager
+#
+CONFIG_NETLINK_MANAGER=y
+
+#
+# Timer manager
+#
+CONFIG_TIMER_MANAGER=y
+
+#
+# Alarm manager
+#
+CONFIG_ALARM_MANAGER=y
+
+#
+# Battery manager
+#
+CONFIG_BATTERY_MANAGER=y
+
+#
+# Uart manager
+#
+CONFIG_UART_MANAGER=y
+
+#
+# Zigbee manager
+#
+CONFIG_ZIGBEE_MANAGER=n
+
+#
+# GPIO manager
+#
+CONFIG_GPIO_MANAGER=y
+
+#
+# Camera manager(char device)
+#
+CONFIG_CHAR_CAMERA_MANAGER=n
+
+#
+# Camera manager(V4L2)
+#
+CONFIG_V4L2_CAMERA_MANAGER=y
+
+#
+# PWM Manager
+#
+CONFIG_PWM_MANAGER=n
+
+#
+# Watchdog manager
+#
+CONFIG_WATCHDOG_MANAGER=y
+
+#
+# Power manager
+#
+CONFIG_POWER_MANAGER=y
+
+#
+# I2C manager
+#
+CONFIG_I2C_MANAGER=y
+
+#
+# EFUSE manager
+#
+CONFIG_EFUSE_MANAGER=y
+
+#
+# RTC manager
+#
+CONFIG_RTC_MANAGER=y
+
+#
+# SPI manager
+#
+CONFIG_SPI_MANAGER=y
+
+#
+# 74HC595 manager
+#
+CONFIG_74HC595_MANAGER=n
+
+#
+# TM1620 manager
+#
+CONFIG_TM1620_MANAGER=y
+
+#
+# Cypress(PSoc4)
+#
+CONFIG_CYPRESS_MANAGER=n
+
+#
+# MTD flash manager
+#
+CONFIG_MTD_FLASH_MANAGER=n
+
+#
+# USB device manager
+#
+CONFIG_USB_DEVICE_MANAGER=y
+
+#
+# Security manager
+#
+CONFIG_SECURITY_MANAGER=y
+
+#
+# Input manager
+#
+CONFIG_INPUT_MANAGER=y
+
+#
+# Network manager
+#
+CONFIG_NETWORK_MANAGER=y
+
+#
+# Wifi manager
+#
+CONFIG_WIFI_MANAGER=y
+
+#
+# Vibrator manager
+#
+CONFIG_VIBRATOR_MANAGER=n
+
+#
+# Mount manager
+#
+CONFIG_MOUNT_MANAGER=y
+
+#
+# Framebuffer manager
+#
+CONFIG_FRMAEBUFFER_MANAGER=n
+
+#
+# leds gpio manager
+#
+CONFIG_LEDS_GPIO_MANAGER=n
+
+#
+# sgm42507
+#
+CONFIG_SGM42507_MANAGER=n
+
+#
+# fxl_lock_body
+#
+CONFIG_FXL_LOCK_BODY_MANAGER=n
+
+#
+# mili_lock_body
+#
+CONFIG_MILI_LOCK_BODY_MANAGER=n
+
+#
+# Lock cylinder
+#
+CONFIG_LOCK_CYLINDER_MANAGER=n
+
+#
+# Graphics drawer
+#
+CONFIG_GRAPHICS_DRAWER=y
+
+#
+# ALSA audio
+#
+CONFIG_ALSA_AUDIO=n
+ifeq ($(CONFIG_ALSA_AUDIO), y)
+
+	# Player
+	CONFIG_ALSA_AUDIO_PLAYER=y
+
+	#Recorder
+	CONFIG_ALSA_AUDIO_RECORDER=y
+
+	#Mixer
+	CONFIG_ALSA_AUDIO_MIXER=y
+endif
+
+#
+# Mini-zip
+#
+CONFIG_MINI_ZIP=n
+
+#
+# Face recognize
+#
+CONFIG_JIUFENG_FACE_RECOGNIZE=n
+CONFIG_EI_FACE_RECOGNIZE=n
+#####################################################
+#
+# Handle dependency
+#
+#####################################################
+ifeq ($(CONFIG_UART_MANAGER), y)
+CONFIG_LIB_SERIAL=y
+endif
+
+ifeq ($(CONFIG_ZIGBEE_MANAGER), y)
+CONFIG_LIB_SERIAL=y
+CONFIG_UART_MANAGER=y
+CONFIG_ALARM_MANAGER=y
+endif
+
+ifeq ($(CONFIG_GPIO_MANAGER), y)
+CONFIG_LIB_GPIO=y
+endif
+
+ifeq ($(CONFIG_I2C_MANAGER), y)
+CONFIG_LIB_I2C=y
+endif
+
+ifeq ($(CONFIG_BATTERY_MANAGER), y)
+CONFIG_NETLINK_MANAGER=y
+endif
+
+ifeq ($(CONFIG_GRAPHICS_DRAWER), y)
+CONFIG_FRMAEBUFFER_MANAGER=y
+CONFIG_LIB_PNG=y
+endif
+
+ifeq ($(CONFIG_ALSA_AUDIO), y)
+CONFIG_LIB_ALSA=y
+endif
+
+ifeq ($(CONFIG_MTD_FLASH_MANAGER), y)
+CONFIG_LIB_MTD=y
+endif
+
+ifeq ($(CONFIG_LIB_PNG), y)
+CONFIG_LIB_ZLIB=y
+endif
+
+ifeq ($(CONFIG_LIB_FINGERPRINT_FPC), y)
+CONFIG_UART_MANAGER=y
+CONFIG_ALARM_MANAGER=y
+endif
+
+ifeq ($(CONFIG_VIBRATOR_MANAGER), y)
+CONFIG_NETLINK_MANAGER=y
+endif
+
+ifeq ($(CONFIG_MINI_ZIP), y)
+CONFIG_LIB_ZLIB=y
+CONFIG_LIB_MINI_ZIP=y
+endif
+
+ifeq ($(CONFIG_V4L2_CAMERA_MANAGER), y)
+CONFIG_FRMAEBUFFER_MANAGER=y
+CONFIG_LIB_FFMPEG=y
+endif
+
+ifeq ($(CONFIG_LOCK_CYLINDER_MANAGER), y)
+CONFIG_EFUSE_MANAGER=y
+endif
+
+ifeq ($(CONFIG_NETWORK_MANAGER), y)
+CONFIG_LIB_DHCP=y
+endif
+
+ifeq ($(CONFIG_WIFI_MANAGER), y)
+CONFIG_LIB_WPA_CLI=y
+CONFIG_LIB_DHCP=y
+CONFIG_NETWORK_MANAGER=y
+endif
+
+
+ifeq ($(CONFIG_JIUFENG_FACE_RECOGNIZE), y)
+CONFIG_LIB_FACE_JIUFENG=y
+CONFIG_V4L2_CAMERA_MANAGER=y
+CONFIG_FRMAEBUFFER_MANAGER=y
+CONFIG_GRAPHICS_DRAWER=y
+CONFIG_ALARM_MANAGER=y
+endif
+
+ifeq ($(CONFIG_EI_FACE_RECOGNIZE), y)
+CONFIG_LIB_FACE_EI=y
+CONFIG_LIB_HW_JPEG=y
+CONFIG_V4L2_CAMERA_MANAGER=y
+CONFIG_FRMAEBUFFER_MANAGER=y
+CONFIG_GRAPHICS_DRAWER=y
+CONFIG_ALARM_MANAGER=y
+endif
+
+ifeq ($(CONFIG_LIB_QRCODE_TUTENG), y)
+CONFIG_V4L2_CAMERA_MANAGER=y
+CONFIG_FRMAEBUFFER_MANAGER=y
+endif
+
+CONFIG_JPG=y

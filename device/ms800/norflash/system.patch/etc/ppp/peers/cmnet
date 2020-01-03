@@ -1,0 +1,18 @@
+/dev/ttyS0
+115200
+nocrtscts
+nocdtrcts
+logfile /tmp/logfile
+local
+nobsdcomp
+nodeflate
+novj
+usepeerdns
+defaultroute
+noipdefault
+ipcp-accept-local
+ipcp-accept-remote
+mru 1280
+mtu 1500
+lock
+connect "/usr/sbin/chat -v -t 50 -f /etc/ppp/chat/cmtc-isp"

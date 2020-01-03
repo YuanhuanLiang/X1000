@@ -1,0 +1,10 @@
+
+if [ $# != 2 ];then
+	echo "chd_upstring <wget url> <src_string>"
+	exit 1
+fi
+
+url="$1"
+src_string="$2"
+
+wget -o /tmp/wget.log --post-data=$src_string $url/string -O /dev/null

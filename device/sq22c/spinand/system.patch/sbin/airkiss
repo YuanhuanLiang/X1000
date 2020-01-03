@@ -1,0 +1,20 @@
+#!/bin/sh
+
+INTERFACE=wlan0
+# stop already exist process
+killall udhcpc > /dev/null
+killall wpa_supplicant > /dev/null
+
+ifconfig $INTERFACE down
+sleep 1
+
+#echo /firmware/fw_bcm43438.bin > /sys/module/bcmdhd/parameters/firmware_path
+
+ifconfig $INTERFACE up
+
+# excute airkiss core function
+/sbin/akiss -d -p 7
+
+
+/sbin/wifi_connect.sh &
+

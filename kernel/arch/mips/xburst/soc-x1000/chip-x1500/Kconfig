@@ -1,0 +1,27 @@
+
+
+choice
+	prompt "Board type"
+	depends on SOC_X1000
+	default PRODUCT_X1500_YAK
+
+config  PRODUCT_X1500_YAK
+    bool "product x1500 yak"
+
+config  PRODUCT_X1500_QRCODE
+    bool "product x1500 qrcode"
+endchoice
+
+if PRODUCT_X1500_YAK
+config PRODUCT_NAME
+string
+default "yak"
+source "arch/mips/xburst/soc-x1000/chip-x1500/yak/Kconfig"
+endif
+
+if PRODUCT_X1500_QRCODE
+config PRODUCT_NAME
+string
+default "qrcode"
+source "arch/mips/xburst/soc-x1000/chip-x1500/qrcode/Kconfig"
+endif

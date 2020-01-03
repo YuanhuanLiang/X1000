@@ -1,0 +1,5 @@
+#!/bin/sh
+
+ifconfig wlan0 up
+
+/usr/bin/iwlist wlan0 scanning | grep "ESSID"

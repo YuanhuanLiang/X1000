@@ -1,0 +1,51 @@
+menuconfig ESPWIFI
+	tristate "Espressif wireless card support"
+	depends on MMC && MAC80211
+	default n
+	---help---
+	  This option use to select support the Espressif wireless
+	  network adapter.
+
+if ESPWIFI
+
+choice
+	prompt "choice the type of interface"
+	depends on ESPWIFI
+	default ESP_USE_SDIO
+config ESP_USE_SDIO
+        bool "use SDIO interface"
+config ESP_USE_SPI
+        bool "use SPI interface"
+endchoice
+
+config ESP_ACK_INTERRUPT
+	bool "driver acknowledge the SDIO or SPI interrupt"
+	depends on ESPWIFI
+	default y
+	---help---
+	  This option enables the acknowledge SDIO or SPI interrupt
+	  support in device driver.
+
+config P2P_CONCURRENT
+	bool "espwifi support P2P"
+	depends on ESPWIFI
+	default y
+	---help---
+	  This option enables P2P support for some devices based on
+	  driver support.
+
+config ESP_PREALLOC
+	tristate "use esp_prealloc for small memory system"
+	depends on ESPWIFI
+	default y if ESPWIFI
+	---help---
+	  This is common code for Espressif wireless network adapters,
+	  it should be use in a small memory system.
+
+config ESP8089
+	tristate "ESP8089 wireless network adapter"
+	depends on ESPWIFI
+	default y if ESPWIFI
+	---help---
+	  This is the driver for Espressif ESP8089 wireless network adapter.
+endif

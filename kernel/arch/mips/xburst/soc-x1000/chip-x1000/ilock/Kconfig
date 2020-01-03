@@ -1,0 +1,34 @@
+choice
+prompt "Core Board Version"
+depends on PRODUCT_X1000_ILOCK
+default BOARD_X1000_ILOCK
+
+config BOARD_X1000_ILOCK
+bool "board x1000 ilock"
+depends on PRODUCT_X1000_ILOCK
+
+config BOARD_X1000_ILOCK_V20
+bool "board x1000 lock v20"
+depends on PRODUCT_X1000_ILOCK
+
+config BOARD_X1000_ILOCK_V201
+bool "board x1000 lock v201"
+depends on PRODUCT_X1000_ILOCK
+
+config BOARD_X1000_ILOCK_V21
+bool "board x1000 lock v21"
+depends on PRODUCT_X1000_ILOCK
+
+config BOARD_X1000_360_S1_ILOCK
+bool "board x1000 360 S1 ilock"
+depends on PRODUCT_X1000_ILOCK
+
+endchoice
+
+config BOARD_NAME
+string
+default "ilock" if BOARD_X1000_ILOCK
+default "ilock-v20" if BOARD_X1000_ILOCK_V20
+default "ilock-v201" if BOARD_X1000_ILOCK_V201
+default "ilock-v21" if BOARD_X1000_ILOCK_V21
+default "ilock-360-S1" if BOARD_X1000_360_S1_ILOCK

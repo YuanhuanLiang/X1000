@@ -1,0 +1,15 @@
+choice
+prompt "BOARD version"
+depends on PRODUCT_X1000_SPEAKER
+default BOARD_X1000_SPEAKER
+
+config BOARD_X1000_SPEAKER
+bool "board x1000 speaker"
+depends on PRODUCT_X1000_SPEAKER
+
+endchoice
+
+config BOARD_NAME
+string
+default "speaker" if BOARD_X1000_SPEAKER
+

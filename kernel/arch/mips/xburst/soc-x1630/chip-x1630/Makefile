@@ -1,0 +1,1 @@
+obj-$(CONFIG_PLATFORM_X1630_IMP)		+= imp/

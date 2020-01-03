@@ -1,0 +1,4 @@
+#!/bin/sh
+sync
+umount /mnt/$MDEV*
+rm -rf /mnt/$MDEV*

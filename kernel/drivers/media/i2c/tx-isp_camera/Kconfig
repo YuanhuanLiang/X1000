@@ -1,0 +1,31 @@
+comment "tx-isp camera sensor drivers"
+
+config TX_ISP_CAMERA_SP9250
+	tristate "Superpix SP9250 sensor support"
+	depends on I2C && VIDEO_TX_ISP
+	help
+	  This is a tx-isp camera driver for the SP9250 sensor
+
+config TX_ISP_CAMERA_OV2735B
+	tristate "OmniVision OV2735B sensor support"
+	depends on I2C && VIDEO_TX_ISP
+	help
+	  This is a tx-isp camera driver for the OV2735B sensor
+
+config TX_ISP_CAMERA_OV9281
+	tristate "OmniVision OV9281 sensor support"
+	depends on I2C && VIDEO_TX_ISP
+	help
+	  This is a tx-isp camera driver for the OV9281 sensor
+
+config TX_ISP_CAMERA_GC2375A
+	tristate "gc2375a camera support"
+	depends on I2C && VIDEO_TX_ISP
+	help
+	  This is a tx-isp camera driver for the gc2375a sensor
+
+config TX_ISP_CAMERA_GC0328
+	tristate "gc0328 camera support"
+	depends on I2C && VIDEO_TX_ISP
+	help
+	  This is a tx-isp camera driver for the gc0328 sensor

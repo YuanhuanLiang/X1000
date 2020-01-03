@@ -1,0 +1,19 @@
+choice
+prompt "Core Board Version"
+depends on PRODUCT_X1000_MS800
+default BOARD_X1000_MS800
+
+config BOARD_X1000_MS800_V10
+bool "board x1000 ms800 v10"
+depends on PRODUCT_X1000_MS800
+
+config BOARD_X1000_SQ22C_V10
+bool "board x1000 sq22c v10"
+depends on PRODUCT_X1000_MS800
+
+endchoice
+
+config BOARD_NAME
+string
+default "ms800-v10" if BOARD_X1000_MS800_V10
+default "sq22c-v10" if BOARD_X1000_SQ22C_V10

@@ -1,0 +1,8 @@
+*.o
+tinycap
+tinymix
+tinypcminfo
+tinyplay
+
+tags
+.tags*

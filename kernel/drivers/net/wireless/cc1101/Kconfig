@@ -1,0 +1,10 @@
+menuconfig CC1101
+	tristate "CC1101 RF support"
+
+if CC1101
+config CC1101_915M
+	tristate "CC1101 915MHz RF support"
+	depends on JZ_SPI
+	help
+	  Support for CC1101 915MHz RF Transceiver .
+endif

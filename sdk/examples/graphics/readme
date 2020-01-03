@@ -1,0 +1,3 @@
+测试透明效果的png图片，类似image文件夹里面spinner_recovery_64.png的图片
+adb push ./image/* /res/image(如果失败，记得新建文件夹)
+运行测试用测即可显示该图片的透明效果

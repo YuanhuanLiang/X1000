@@ -1,0 +1,11 @@
+# /etc/inittab
+
+# now run any rc scripts
+::sysinit:/etc/init.d/rcS
+::respawn:-/bin/sh
+
+# Stuff to do for the 3-finger salute
+::ctrlaltdel:/sbin/reboot
+
+# Stuff to do before rebooting
+null::shutdown:/bin/umount -a -r

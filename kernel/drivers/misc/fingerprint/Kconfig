@@ -1,0 +1,46 @@
+menuconfig FINGERPRINT
+	bool "Fingerprint sensor support"
+
+if FINGERPRINT
+config INPUT_BYD_FPS_SPI
+        bool "BYD fingerprint support"
+        depends on JZ_SPI #(SPI && SPI_MASTER)
+        help
+	         Say Y here if you have BYD fingerprint
+	         sensor hooked to an SPI bus.
+
+config BYD_FINGERPRINT_MAX_NUM
+    int "BYD fingerprint the MAX number"
+    range 1 100
+    default 10
+    depends on INPUT_BYD_FPS_SPI
+    help
+      The maximum number of registered fingers
+
+config FINGERPRINT_MICROARRAY
+	bool "MicroArray fingerprint sensor"
+	depends on JZ_SPI
+	help
+	  Support for MicroArray fingerPrint.
+
+config FINGERPRINT_GOODIX_GF5X
+	bool "Goodix GF5X fingerprint sensor"
+	depends on JZ_SPI
+	help
+	  Support for Goodix GF5X fingerprint.
+
+config FINGERPRINT_FPC
+	bool "FPC fingerprint sensor"
+	depends on JZ_SPI
+	help
+	  Support for FPC fingerprint.
+
+if !VIDEO_JZ_CIM_HOST_V13
+config MCLK_PROVIDED_TO_ENCRYPT_IC
+	bool "MCLK provided to Yoyon algorithm encrypt IC"
+	depends on FINGERPRINT_FPC
+	default n
+	help
+	  MCLK is provided to the Yoyon algorithm encryption IC.
+endif
+endif

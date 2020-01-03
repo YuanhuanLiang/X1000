@@ -1,0 +1,31 @@
+#!/bin/sh
+
+WPA_CONFIG=/etc/wpa_supplicant.conf
+
+if [ $# -lt 4 ] || ([ $# -eq 2 ] && [ $1 -eq "-h" ]) ; then
+	echo "Usage: `basename $0` -n SSID -p password"
+	echo "Help:"
+	echo "  -n SSID"
+	echo "  -p password"
+	echo "  -h help"
+	exit 0
+fi
+
+SSID=$2
+PASSWD=$4
+
+if [ ! -f "$WPA_CONFIG" ]; then
+	touch $WPA_CONFIG
+fi
+
+echo > $WPA_CONFIG
+
+echo "network={"         >> $WPA_CONFIG
+echo "scan_ssid=1"       >> $WPA_CONFIG
+echo "ssid=\""$SSID"\""  >> $WPA_CONFIG
+echo "psk=\""$PASSWD"\"" >> $WPA_CONFIG
+echo "}"                 >> $WPA_CONFIG
+
+sync
+
+/sbin/connect_wifi.sh &

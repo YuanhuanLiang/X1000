@@ -1,0 +1,11 @@
+#!/bin/sh
+
+INTERFACE=wlan0
+
+ifconfig $INTERFACE down
+# stop already exist process
+killall udhcpc > /dev/null
+killall wpa_supplicant > /dev/null
+
+exit 0
+

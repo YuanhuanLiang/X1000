@@ -1,0 +1,15 @@
+
+if [ $# -lt 2 ];then
+	echo "chd_upload <wget url> <src_file> [dst_file]"
+	exit 1
+fi
+
+url="$1"
+src_file="$2"
+dst_file="$3"
+
+if [ "$dst_file" = "" ];then
+        dst_file=$src_file
+fi
+
+wget -o /tmp/wget.log --post-file=$src_file $url/$dst_file -O /dev/null

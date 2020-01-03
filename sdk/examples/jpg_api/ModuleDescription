@@ -1,0 +1,18 @@
+/**
+ * @brief
+ * Libjpeg-hw is used to provide API to operate jpeg controler.
+ * It can save yuv data into jpg format.
+ * libjpeg-hw.so have created in the directory /usr/lib/
+ *
+ * Operation method:
+ * Refers to packages/example/Sample/jpeg-hw
+ *
+ * Add this module in the project:
+ *
+ * device/\<board\>/\<board\>_base.mk:PRODUCT_MODULES += libjpeg-hw
+ *
+ * @author Ingenic
+ *
+ * @version 1.0.0
+ */
+Libjpeg-hw Description;

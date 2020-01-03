@@ -1,0 +1,30 @@
+#!/bin/sh
+
+key="$1"
+len_key=${#key}
+value="$2"
+cfgdir="/chird/config/"
+
+if [ $# -lt 2 ]; then
+	echo "fw_setenv <config key> <value>"
+	exit 1
+fi
+
+# get zhe compare string,change the config file
+cmpstr=${key%%_*}
+len_cmpstr=${#cmpstr}
+
+#compare and set "$cfgfile"
+
+if [ $len_cmpstr -eq $len_key ];then
+    cfgfile="other.cfg" 
+else                    
+    cfgfile="$cmpstr".cfg
+fi
+
+if [ ! -f "$cfgdir$cmpstr.cfg" ];then
+    cfgfile="other.cfg"
+fi
+
+chd_cfg_set "$cfgdir$cfgfile" "$key" "$value"
+

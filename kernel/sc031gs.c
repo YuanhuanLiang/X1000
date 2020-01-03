@@ -1,0 +1,1 @@
+drivers/media/i2c/soc_camera/sc031gs.c

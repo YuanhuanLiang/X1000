@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# Start adb....
+#
+
+case "$1" in
+  start)
+	echo "Starting adb..."
+	cd /sys/class/android_usb/android0
+	echo 0 > enable
+	echo 18d1 > idVendor
+	echo d002 > idProduct
+	echo mass_storage,adb > functions
+	echo 1 > enable
+	/sbin/adbserver.sh &
+	;;
+  stop)
+	;;
+  restart|reload)
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?

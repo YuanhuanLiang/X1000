@@ -1,0 +1,108 @@
+
+
+choice
+	prompt "Board type"
+	depends on SOC_X1000
+	default PRODUCT_X1000_PHOENIX
+
+config  PRODUCT_X1000_PHOENIX
+    bool "product x1000 phoenix"
+
+config	PRODUCT_X1000_HALLEY2
+	bool "product x1000 halley2"
+
+config	PRODUCT_X1000_ATHENA_EYES
+	bool "product x1000 athena_eyes"
+
+config	PRODUCT_X1000_SOLAR
+	bool "product x1000 solar"
+
+config  PRODUCT_X1000_IDRIVER
+        bool "product x1000 iDriver"
+
+config  PRODUCT_X1000_SPEAKER
+        bool "product x1000 speaker"
+
+config  PRODUCT_X1000_BEETHOVEN
+        bool "product x1000 beethoven"
+
+config  PRODUCT_X1000_SKYWORTH
+        bool "product x1000 skyworth"
+
+config  PRODUCT_X1000_ILOCK
+        bool "product x1000 ilock"
+
+config  PRODUCT_X1000_MS800
+        bool "product x1000 ms800"
+
+endchoice
+
+if PRODUCT_X1000_PHOENIX
+config PRODUCT_NAME
+string
+default "phoenix"
+source "arch/mips/xburst/soc-x1000/chip-x1000/phoenix/Kconfig"
+endif
+
+if PRODUCT_X1000_HALLEY2
+config PRODUCT_NAME
+string
+default "halley2"
+source "arch/mips/xburst/soc-x1000/chip-x1000/halley2/Kconfig"
+endif
+
+if PRODUCT_X1000_ATHENA_EYES
+config PRODUCT_NAME
+string
+default "athena_eyes"
+source "arch/mips/xburst/soc-x1000/chip-x1000/athena_eyes/Kconfig"
+endif
+
+if PRODUCT_X1000_SOLAR
+config PRODUCT_NAME
+string
+default "solar"
+source "arch/mips/xburst/soc-x1000/chip-x1000/solar/Kconfig"
+endif
+
+if PRODUCT_X1000_IDRIVER
+config PRODUCT_NAME
+string
+default "idriver"
+source "arch/mips/xburst/soc-x1000/chip-x1000/idriver/Kconfig"
+endif
+
+if PRODUCT_X1000_SPEAKER
+config PRODUCT_NAME
+string
+default "speaker"
+source "arch/mips/xburst/soc-x1000/chip-x1000/speaker/Kconfig"
+endif
+
+if PRODUCT_X1000_BEETHOVEN
+config PRODUCT_NAME
+string
+default "beethoven"
+source "arch/mips/xburst/soc-x1000/chip-x1000/beethoven/Kconfig"
+endif
+
+if PRODUCT_X1000_SKYWORTH
+config PRODUCT_NAME
+string
+default "skyworth"
+source "arch/mips/xburst/soc-x1000/chip-x1000/skyworth/Kconfig"
+endif
+
+if PRODUCT_X1000_ILOCK
+config PRODUCT_NAME
+string
+default "ilock"
+source "arch/mips/xburst/soc-x1000/chip-x1000/ilock/Kconfig"
+endif
+
+if PRODUCT_X1000_MS800
+config PRODUCT_NAME
+string
+default "ms800"
+source "arch/mips/xburst/soc-x1000/chip-x1000/ms800/Kconfig"
+endif

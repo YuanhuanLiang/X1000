@@ -1,0 +1,40 @@
+编译系统介绍：
+
+1) soure envsetup.sh
+   这一步的作用：
+   1. 把envsetup.sh脚本的函数导到当前shell环境中
+   2. 运行此脚步的envsetup()函数，这函数完成的工作：
+      a. 定位到源码的根目录
+      b. 把交叉编译工具链路径和tools/host设置到环境变量PATH中
+      c. 在device/下最多搜索3层子目录，找vendorsetup.sh脚步，并运行它
+         这个脚步作用是调用到envsetup.sh的add_lunch_combo()函数，根据
+         参数建立LUNCH_MENU_CHOICES数组
+
+2) lunch
+   1. 实际就是运行envsetup.sh脚步中的lunch()函数
+   2. lunch()函数的作用：
+      a. 打印LUNCH_MENU_CHOICES数组的内存，以方便选择目标设备
+      b. 根据输入，提取LUNCH_MENU_CHOICES数组的一个元素，无效则报错
+      c. 分割选择的数组项，提取：
+         TARGET_DEVICE：目标设备名
+         TARGET_DEVICE_VERSION：设备版本
+         TARGET_STORAGE_MEDIUM：设备的存储介质，如nandflash/norflash
+
+         例如选择ms800-v10-spinand-eng，则：
+         TARGET_DEVICE=ms800
+         TARGET_DEVICE_VERSION=v10
+         TARGET_STORAGE_MEDIUM=spinand
+
+      d. export TARGET_DEVICE TARGET_DEVICE_VERSION TARGET_STORAGE_MEDIUM到当前shell环境,
+         这样Makefile就能使用这几个变量
+      e. 复制build/Makefile文件到源码根目录
+
+3) 根目录的Makefile
+   1. 包含 device/$(TARGET_DEVICE)/device.mk，作用：
+      a. 根据 TARGET_DEVICE TARGET_DEVICE_VERSION TARGET_STORGAGE_MEDIUM 确定 x-loader、kernel
+         以及sdk的配置
+      b. 设置文件系统类型以及制作文件系统镜像的参数等
+
+   2. 包含build/config.mk, 作用：
+      a. 定义编译目标代码的路径以及生成目标的路径
+      b. 定义生成目标的输出路径等

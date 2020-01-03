@@ -1,0 +1,9 @@
+#
+# chird GPIO drivers
+#
+
+config CHD_PWM
+	tristate "CHD PWM"
+	help
+	Select this to enable the chird PWM driver
+

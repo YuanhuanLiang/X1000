@@ -1,0 +1,9 @@
+#
+# chird GPIO drivers
+#
+
+config MM9932
+	tristate "CHD MM9932"
+	help
+	Select this to enable the chird MM9932 driver
+

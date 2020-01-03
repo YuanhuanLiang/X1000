@@ -1,0 +1,9 @@
+#
+# chird GPIO drivers
+#
+
+config CHD_GPIO
+	tristate "CHD GPIO"
+	help
+	Select this to enable the chird  GPIO driver
+

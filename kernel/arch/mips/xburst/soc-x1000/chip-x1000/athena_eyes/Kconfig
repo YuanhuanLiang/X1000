@@ -1,0 +1,19 @@
+choice
+prompt "BOARD version"
+depends on PRODUCT_X1000_ATHENA_EYES
+default BOARD_X1000_ATHENA_EYES
+
+config BOARD_X1000_ATHENA_EYES
+bool "board x1000 athena_eyes"
+depends on PRODUCT_X1000_ATHENA_EYES
+
+endchoice
+
+config BOARD_NAME
+string
+default "athena_eyes" if BOARD_X1000_ATHENA_EYES
+
+
+
+
+

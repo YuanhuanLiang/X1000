@@ -1,0 +1,19 @@
+choice
+prompt "BOARD version"
+depends on PRODUCT_X1000_SOLAR
+default BOARD_X1000_SOLAR
+
+config BOARD_X1000_SOLAR
+bool "board x1000 solar"
+depends on PRODUCT_X1000_SOLAR
+
+endchoice
+
+config BOARD_NAME
+string
+default "solar" if BOARD_X1000_SOLAR
+
+
+
+
+

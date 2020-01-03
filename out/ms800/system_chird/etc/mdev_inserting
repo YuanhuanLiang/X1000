@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -e "/dev/$MDEV" ]; then
+	mkdir -p /mnt/$MDEV
+	mount -rw /dev/$MDEV /mnt/$MDEV
+	if [ $? -ne 0]; then
+		rm -rf /mnt/$MDEV
+	fi
+
+fi

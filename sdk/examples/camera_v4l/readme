@@ -1,0 +1,69 @@
+使能UVC功能需按照以下步骤执行
+1. 在PC端安装预览工具
+   LinuxPC tool xawtv
+   windowsPC tool amcap
+2. 将文件video_pic.sh、test_camerav4l2集成到设备文件系统中
+
+
+3. 内核配置选择camera usb gadget功能
+CONFIG_USB_G_ANDROID=y
+CONFIG_USB_ANDROID_WEBCAM=y
+CONFIG_USB_JZ_DWC2=y
+CONFIG_USB_DWC2=n
+CONFIG_MEDIA_USB_SUPPORT=y
+CONFIG_USB_VIDEO_CLASS=y
+CONFIG_USB_VIDEO_CLASS_INPUT_EVDEV=y
+
+3.1
+编译配置： USB_G_ANDROID、USB_ANDROID_WEBCAM
+gadget选项中选择Android Composite Gadget后,在此基础上同时选择USB_ANDROID_WEBCAM
+
+USB_G_ANDROID
+Location:
+  -> Device Drivers
+    -> USB support (USB_SUPPORT [=y])
+      -> USB Gadget Support (USB_GADGET [=y])
+        -> USB Gadget Drivers (<choice> [=y])
+          (X) Android Composite Gadget
+
+
+CONFIG_USB_ANDROID_WEBCAM:
+Enable webcam function in android
+Symbol: USB_ANDROID_WEBCAM [=y]
+Type  : boolean
+Prompt: Use webcam in android
+  Location:
+    -> Device Drivers
+      -> USB support (USB_SUPPORT [=y])
+        -> USB Gadget Support (USB_GADGET [=y])
+          -> USB Gadget Drivers (<choice> [=y])
+            -> Android Composite Gadget (USB_G_ANDROID [=y])
+
+3.2
+选择USB staging driver dwc2驱动
+
+Symbol: USB_DWC2 [=n]
+Type  : tristate
+Prompt: DesignWare USB2 DRD Core Support
+  Location:
+    -> Device Drivers
+      -> Staging drivers (STAGING [=n])
+
+Symbol: USB_JZ_DWC2 [=y]
+Type  : tristate
+Prompt: DesignWare USB2 DRD Core Support
+  Location:
+    -> Device Drivers
+      -> USB support (USB_SUPPORT [=y])
+
+
+CONFIG_USB_VIDEO_CLASS
+Location:
+  -> Device Drivers
+    -> Multimedia support (MEDIA_SUPPORT [=y])
+      -> Media USB Adapters (MEDIA_USB_SUPPORT [=y])
+        <*>   USB Video Class (UVC)
+4.
+./video_pic.sh start
+./test_camerav4l2  -s 0 -p -f 1
+注意默认的uvc设备节点，默认是/dev/video1

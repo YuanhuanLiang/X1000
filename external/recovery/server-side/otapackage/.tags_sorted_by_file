@@ -1,0 +1,320 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+main	__main__.py	/^from otapackage.mkotapackage import main$/;"	i
+Config	config.py	/^class Config(object):$/;"	c
+base	config.py	/^from otapackage.lib import base$/;"	i
+configuration_file_suffix	config.py	/^configuration_file_suffix = '.conf'$/;"	v
+customer_path	config.py	/^customer_path = 'otapackage\/customer\/generated\/'$/;"	v
+customer_suffix	config.py	/^customer_suffix = 'nor'$/;"	v
+customize_file	config.py	/^customize_file = 'customization'$/;"	v
+customize_file_name	config.py	/^customize_file_name = "%s%s" %(customize_file, configuration_file_suffix)$/;"	v
+devctls	config.py	/^devctls = {'none': 0, 'eraseall': 1}$/;"	v
+device_types	config.py	/^device_types = ('nor', 'nand', 'mmc')$/;"	v
+device_types_diff	config.py	/^device_types_diff = ('nor', 'nand')$/;"	v
+e_img_types	config.py	/^e_img_types = base.enum_f1($/;"	v
+e_updatemodes	config.py	/^e_updatemodes = {'full': 0x200, 'slice': 0x201}$/;"	v
+enum_device_types	config.py	/^enum_device_types = base.enum_f2('nor', 'nand', 'mmc')$/;"	v
+get_customer_files_suffix	config.py	/^    def get_customer_files_suffix(cls):$/;"	m	class:Config
+get_image_cfg_path	config.py	/^    def get_image_cfg_path(cls):$/;"	m	class:Config
+get_image_path	config.py	/^    def get_image_path(cls):$/;"	m	class:Config
+get_outputdir_path	config.py	/^    def get_outputdir_path(cls):$/;"	m	class:Config
+get_private_key	config.py	/^    def get_private_key(cls):$/;"	m	class:Config
+get_public_key	config.py	/^    def get_public_key(cls):$/;"	m	class:Config
+get_slicesize	config.py	/^    def get_slicesize(cls):$/;"	m	class:Config
+image_path	config.py	/^image_path = 'otapackage\/res\/image'$/;"	v
+img_types	config.py	/^img_types = ('normal', 'ubifs', 'jffs2', 'cramfs', 'yaffs2')$/;"	v
+local	config.py	/^local = locals()$/;"	v
+log_backup_cnt	config.py	/^log_backup_cnt = 5$/;"	v
+log_console	config.py	/^log_console = "console"$/;"	v
+log_file	config.py	/^log_file = "file"$/;"	v
+log_logname	config.py	/^log_logname = ".otapackage_log"$/;"	v
+log_prompt	config.py	/^log_prompt = "otapackage"$/;"	v
+log_size	config.py	/^log_size = 10 * 1024 * 1024$/;"	v
+make_customer_files_fullname	config.py	/^    def make_customer_files_fullname(cls, prefix):$/;"	m	class:Config
+nandflash_block_size	config.py	/^nandflash_block_size = nandflash_page_size * nandflash_pages_per_block$/;"	v
+nandflash_page_size	config.py	/^nandflash_page_size = 2048$/;"	v
+nandflash_pages_per_block	config.py	/^nandflash_pages_per_block = 64$/;"	v
+output_config_name	config.py	/^output_config_name = "update.xml"$/;"	v
+output_global_config_name	config.py	/^output_global_config_name = "global.xml"$/;"	v
+output_pack_config_dir	config.py	/^output_pack_config_dir = "%s%03d" % ($/;"	v
+output_pack_config_index	config.py	/^output_pack_config_index = 0$/;"	v
+output_package_name	config.py	/^output_package_name = "update"$/;"	v
+output_partition_name	config.py	/^output_partition_name = "device.xml"$/;"	v
+output_path	config.py	/^output_path = 'otapackage\/out'$/;"	v
+partition_file	config.py	/^partition_file = 'partition'$/;"	v
+partition_file_name	config.py	/^partition_file_name = "%s%s" %(partition_file, configuration_file_suffix)$/;"	v
+set_customer_files_suffix	config.py	/^    def set_customer_files_suffix(cls, key):$/;"	m	class:Config
+set_image_cfg_path	config.py	/^    def set_image_cfg_path(cls, path):$/;"	m	class:Config
+set_image_path	config.py	/^    def set_image_path(cls, path):$/;"	m	class:Config
+set_outputdir_path	config.py	/^    def set_outputdir_path(cls, path):$/;"	m	class:Config
+set_private_key	config.py	/^    def set_private_key(cls, key):$/;"	m	class:Config
+set_public_key	config.py	/^    def set_public_key(cls, key):$/;"	m	class:Config
+set_slicesize	config.py	/^    def set_slicesize(cls, size):$/;"	m	class:Config
+signature_cipher_lib	config.py	/^signature_cipher_lib = 'signapk\/signapk.jar'$/;"	v
+signature_flag	config.py	/^signature_flag = True$/;"	v
+signature_home	config.py	/^signature_home = 'otapackage\/depmod\/signature'$/;"	v
+signature_key_dir	config.py	/^signature_key_dir = 'otapackage\/res\/keys'$/;"	v
+signature_rsa_private_key	config.py	/^signature_rsa_private_key = "%s\/%s" % (signature_key_dir, "testkey.pk8")$/;"	v
+signature_rsa_public_key	config.py	/^signature_rsa_public_key = "%s\/%s" % (signature_key_dir, "testkey.x509.pem")$/;"	v
+slicebase	config.py	/^slicebase = 1024*1024$/;"	v
+slicesize	config.py	/^slicesize = 1024*1024$/;"	v
+sys	config.py	/^import sys$/;"	i
+ubi_eba_reserved_pebs	config.py	/^ubi_eba_reserved_pebs = 1$/;"	v
+ubi_layout_volume_ebs	config.py	/^ubi_layout_volume_ebs = 2$/;"	v
+ubi_leb_size	config.py	/^ubi_leb_size = nandflash_page_size * (nandflash_pages_per_block - 2)$/;"	v
+ubi_mtd_ubi_beb_limit_per1024	config.py	/^ubi_mtd_ubi_beb_limit_per1024 = 20$/;"	v
+ubi_wl_reserved_pebs	config.py	/^ubi_wl_reserved_pebs = 1$/;"	v
+updatemodes	config.py	/^updatemodes = ('full', 'slice')$/;"	v
+v	config.py	/^    v = {$/;"	v	class:Config
+xml_data_type_integer	config.py	/^xml_data_type_integer = "integer"$/;"	v
+xml_data_type_string	config.py	/^xml_data_type_string = "opaque"$/;"	v
+xml_declaration	config.py	/^xml_declaration = True$/;"	v
+xml_encoding	config.py	/^xml_encoding = "utf-8"$/;"	v
+yaffs2_block_size	config.py	/^yaffs2_block_size = yaffs2_page_size * nandflash_pages_per_block$/;"	v
+yaffs2_page_size	config.py	/^yaffs2_page_size = (nandflash_page_size+yaffs2_tagsize_per_page)$/;"	v
+yaffs2_tagsize_per_page	config.py	/^yaffs2_tagsize_per_page = 28$/;"	v
+local	customer/config.py	/^local = locals()$/;"	v
+re_mmc_device_size	customer/config.py	/^re_mmc_device_size = '512MB'$/;"	v
+re_mmc_partition	customer/config.py	/^re_mmc_partition = ()$/;"	v
+re_mmc_tag	customer/config.py	/^re_mmc_tag = 'mmc'$/;"	v
+re_nand_device_size	customer/config.py	/^re_nand_device_size = '128MB'$/;"	v
+re_nand_partition	customer/config.py	/^re_nand_partition = ($/;"	v
+re_nand_tag	customer/config.py	/^re_nand_tag = 'nand'$/;"	v
+re_nor_device_size	customer/config.py	/^re_nor_device_size = '16MB'$/;"	v
+re_nor_partition	customer/config.py	/^re_nor_partition = ($/;"	v
+re_nor_tag	customer/config.py	/^re_nor_tag = 'nor'$/;"	v
+search_prefix	customer/config.py	/^search_prefix = 're_'$/;"	v
+CustomizeImage	customer/customize.py	/^class CustomizeImage(object):$/;"	c
+argparse	customer/customize.py	/^import argparse$/;"	i
+base	customer/customize.py	/^from otapackage.lib import base$/;"	i
+cmdline_parse	customer/customize.py	/^    def cmdline_parse(cls):$/;"	m	class:CustomizeImage
+config	customer/customize.py	/^from otapackage import config$/;"	i
+create_file_descript	customer/customize.py	/^    def create_file_descript(self, filepath):$/;"	m	class:CustomizeImage
+devctl	customer/customize.py	/^    devctl = 0$/;"	v	class:CustomizeImage
+devtypes	customer/customize.py	/^    devtypes = []$/;"	v	class:CustomizeImage
+file	customer/customize.py	/^    file = config.customize_file$/;"	v	class:CustomizeImage
+filesuffix	customer/customize.py	/^    filesuffix = config.configuration_file_suffix$/;"	v	class:CustomizeImage
+generate_output	customer/customize.py	/^    def generate_output(self):$/;"	m	class:CustomizeImage
+get_default	customer/customize.py	/^    def get_default(cls):$/;"	m	class:CustomizeImage
+image	customer/customize.py	/^from otapackage.lib import image$/;"	i
+imageinfos	customer/customize.py	/^    imageinfos = []$/;"	v	class:CustomizeImage
+imgcnt	customer/customize.py	/^    imgcnt = 0$/;"	v	class:CustomizeImage
+local	customer/customize.py	/^    local = locals()$/;"	v	class:CustomizeImage
+main	customer/customize.py	/^def main():$/;"	f
+os	customer/customize.py	/^import os$/;"	i
+re	customer/customize.py	/^import re$/;"	i
+storagemedium	customer/customize.py	/^    storagemedium = ""$/;"	v	class:CustomizeImage
+sys	customer/customize.py	/^import sys$/;"	i
+types	customer/customize.py	/^    types = config.img_types$/;"	v	class:CustomizeImage
+updatemodes	customer/customize.py	/^    updatemodes = config.updatemodes$/;"	v	class:CustomizeImage
+DeviceConfig	customer/partition.py	/^class DeviceConfig(object):$/;"	c
+__init__	customer/partition.py	/^    def __init__(self, dev):$/;"	m	class:DeviceConfig
+argparse	customer/partition.py	/^import argparse$/;"	i
+base	customer/partition.py	/^from otapackage.lib import base$/;"	i
+cmdline_parse	customer/partition.py	/^    def cmdline_parse(cls):$/;"	m	class:DeviceConfig
+config	customer/partition.py	/^from otapackage import config$/;"	i
+create_device_descript	customer/partition.py	/^    def create_device_descript(self, filepath):$/;"	m	class:DeviceConfig
+devfile	customer/partition.py	/^    devfile = config.partition_file$/;"	v	class:DeviceConfig
+devpartitions	customer/partition.py	/^    devpartitions = []$/;"	v	class:DeviceConfig
+devs	customer/partition.py	/^    devs = zip(devtypes, devsizes, devpartitions)$/;"	v	class:DeviceConfig
+devsizes	customer/partition.py	/^    devsizes = []$/;"	v	class:DeviceConfig
+devtypes	customer/partition.py	/^    devtypes = []$/;"	v	class:DeviceConfig
+filesuffix	customer/partition.py	/^    filesuffix = config.configuration_file_suffix$/;"	v	class:DeviceConfig
+generate_output	customer/partition.py	/^    def generate_output(self):$/;"	m	class:DeviceConfig
+get_default	customer/partition.py	/^    def get_default(cls, type):$/;"	m	class:DeviceConfig
+local	customer/partition.py	/^    local = locals()$/;"	v	class:DeviceConfig
+main	customer/partition.py	/^def main():$/;"	f
+medium_current	customer/partition.py	/^    medium_current = ""$/;"	v	class:DeviceConfig
+os	customer/partition.py	/^import os$/;"	i
+re	customer/partition.py	/^import re$/;"	i
+sys	customer/partition.py	/^import sys$/;"	i
+LOCAL_JAR_MANIFEST	depmod/signature/signapk/Android.mk	/^LOCAL_JAR_MANIFEST := SignApk.mf$/;"	m
+LOCAL_MODULE	depmod/signature/signapk/Android.mk	/^LOCAL_MODULE := signapk$/;"	m
+LOCAL_PATH	depmod/signature/signapk/Android.mk	/^LOCAL_PATH := $(call my-dir)$/;"	m
+LOCAL_SRC_FILES	depmod/signature/signapk/Android.mk	/^LOCAL_SRC_FILES := SignApk.java$/;"	m
+LOCAL_STATIC_JAVA_LIBRARIES	depmod/signature/signapk/Android.mk	/^LOCAL_STATIC_JAVA_LIBRARIES := bouncycastle-host bouncycastle-bcpkix-host$/;"	m
+CERT_RSA_MULTI_NAME	depmod/signature/signapk/SignApk.java	/^    private static final String CERT_RSA_MULTI_NAME = "META-INF\/CERT%d.RSA";$/;"	f	class:SignApk	file:
+CERT_RSA_NAME	depmod/signature/signapk/SignApk.java	/^    private static final String CERT_RSA_NAME = "META-INF\/CERT.RSA";$/;"	f	class:SignApk	file:
+CERT_SF_MULTI_NAME	depmod/signature/signapk/SignApk.java	/^    private static final String CERT_SF_MULTI_NAME = "META-INF\/CERT%d.SF";$/;"	f	class:SignApk	file:
+CERT_SF_NAME	depmod/signature/signapk/SignApk.java	/^    private static final String CERT_SF_NAME = "META-INF\/CERT.SF";$/;"	f	class:SignApk	file:
+CMSSigner	depmod/signature/signapk/SignApk.java	/^        public CMSSigner(JarFile inputJar, File publicKeyFile,$/;"	m	class:SignApk.CMSSigner
+CMSSigner	depmod/signature/signapk/SignApk.java	/^    private static class CMSSigner implements CMSTypedData {$/;"	c	class:SignApk
+CountOutputStream	depmod/signature/signapk/SignApk.java	/^        public CountOutputStream(OutputStream out) {$/;"	m	class:SignApk.CountOutputStream
+CountOutputStream	depmod/signature/signapk/SignApk.java	/^    private static class CountOutputStream extends FilterOutputStream {$/;"	c	class:SignApk
+OTACERT_NAME	depmod/signature/signapk/SignApk.java	/^    private static final String OTACERT_NAME = "META-INF\/com\/android\/otacert";$/;"	f	class:SignApk	file:
+SignApk	depmod/signature/signapk/SignApk.java	/^class SignApk {$/;"	c
+WholeFileSignerOutputStream	depmod/signature/signapk/SignApk.java	/^        public WholeFileSignerOutputStream(OutputStream out, OutputStream tee) {$/;"	m	class:SignApk.WholeFileSignerOutputStream
+WholeFileSignerOutputStream	depmod/signature/signapk/SignApk.java	/^    private static class WholeFileSignerOutputStream extends FilterOutputStream {$/;"	c	class:SignApk
+addDigestsToManifest	depmod/signature/signapk/SignApk.java	/^    private static Manifest addDigestsToManifest(JarFile jar)$/;"	m	class:SignApk	file:
+addOtacert	depmod/signature/signapk/SignApk.java	/^    private static void addOtacert(JarOutputStream outputJar,$/;"	m	class:SignApk	file:
+closing	depmod/signature/signapk/SignApk.java	/^        private boolean closing = false;$/;"	f	class:SignApk.WholeFileSignerOutputStream	file:
+com.android.signapk	depmod/signature/signapk/SignApk.java	/^package com.android.signapk;$/;"	p
+copyFiles	depmod/signature/signapk/SignApk.java	/^    private static void copyFiles(Manifest manifest,$/;"	m	class:SignApk	file:
+decryptPrivateKey	depmod/signature/signapk/SignApk.java	/^    private static KeySpec decryptPrivateKey(byte[] encryptedPrivateKey, File keyFile)$/;"	m	class:SignApk	file:
+finish	depmod/signature/signapk/SignApk.java	/^        public void finish() throws IOException {$/;"	m	class:SignApk.WholeFileSignerOutputStream
+footer	depmod/signature/signapk/SignApk.java	/^        private ByteArrayOutputStream footer = new ByteArrayOutputStream();$/;"	f	class:SignApk.WholeFileSignerOutputStream	file:
+getContent	depmod/signature/signapk/SignApk.java	/^        public Object getContent() {$/;"	m	class:SignApk.CMSSigner
+getContentType	depmod/signature/signapk/SignApk.java	/^        public ASN1ObjectIdentifier getContentType() {$/;"	m	class:SignApk.CMSSigner
+getSigner	depmod/signature/signapk/SignApk.java	/^        public WholeFileSignerOutputStream getSigner() {$/;"	m	class:SignApk.CMSSigner
+getTail	depmod/signature/signapk/SignApk.java	/^        public byte[] getTail() {$/;"	m	class:SignApk.WholeFileSignerOutputStream
+inputJar	depmod/signature/signapk/SignApk.java	/^        private JarFile inputJar;$/;"	f	class:SignApk.CMSSigner	file:
+mCount	depmod/signature/signapk/SignApk.java	/^        private int mCount;$/;"	f	class:SignApk.CountOutputStream	file:
+main	depmod/signature/signapk/SignApk.java	/^    public static void main(String[] args) {$/;"	m	class:SignApk
+notifyClosing	depmod/signature/signapk/SignApk.java	/^        public void notifyClosing() {$/;"	m	class:SignApk.WholeFileSignerOutputStream
+outputFile	depmod/signature/signapk/SignApk.java	/^        private String outputFile;$/;"	f	class:SignApk.CMSSigner	file:
+outputStream	depmod/signature/signapk/SignApk.java	/^        private OutputStream outputStream;$/;"	f	class:SignApk.CMSSigner	file:
+privateKey	depmod/signature/signapk/SignApk.java	/^        private PrivateKey privateKey;$/;"	f	class:SignApk.CMSSigner	file:
+publicKey	depmod/signature/signapk/SignApk.java	/^        private X509Certificate publicKey;$/;"	f	class:SignApk.CMSSigner	file:
+publicKeyFile	depmod/signature/signapk/SignApk.java	/^        private File publicKeyFile;$/;"	f	class:SignApk.CMSSigner	file:
+readPassword	depmod/signature/signapk/SignApk.java	/^    private static String readPassword(File keyFile) {$/;"	m	class:SignApk	file:
+readPrivateKey	depmod/signature/signapk/SignApk.java	/^    private static PrivateKey readPrivateKey(File file)$/;"	m	class:SignApk	file:
+readPublicKey	depmod/signature/signapk/SignApk.java	/^    private static X509Certificate readPublicKey(File file)$/;"	m	class:SignApk	file:
+sBouncyCastleProvider	depmod/signature/signapk/SignApk.java	/^    private static Provider sBouncyCastleProvider;$/;"	f	class:SignApk	file:
+signFile	depmod/signature/signapk/SignApk.java	/^    private static void signFile(Manifest manifest, JarFile inputJar,$/;"	m	class:SignApk	file:
+signWholeFile	depmod/signature/signapk/SignApk.java	/^    private static void signWholeFile(JarFile inputJar, File publicKeyFile,$/;"	m	class:SignApk	file:
+signer	depmod/signature/signapk/SignApk.java	/^        private WholeFileSignerOutputStream signer;$/;"	f	class:SignApk.CMSSigner	file:
+size	depmod/signature/signapk/SignApk.java	/^        public int size() {$/;"	m	class:SignApk.CountOutputStream
+stripPattern	depmod/signature/signapk/SignApk.java	/^    private static Pattern stripPattern =$/;"	f	class:SignApk	file:
+tee	depmod/signature/signapk/SignApk.java	/^        private OutputStream tee;$/;"	f	class:SignApk.WholeFileSignerOutputStream	file:
+type	depmod/signature/signapk/SignApk.java	/^        private final ASN1ObjectIdentifier type;$/;"	f	class:SignApk.CMSSigner	file:
+usage	depmod/signature/signapk/SignApk.java	/^    private static void usage() {$/;"	m	class:SignApk	file:
+write	depmod/signature/signapk/SignApk.java	/^        public void write(OutputStream out) throws IOException {$/;"	m	class:SignApk.CMSSigner
+write	depmod/signature/signapk/SignApk.java	/^        public void write(byte[] b) throws IOException {$/;"	m	class:SignApk.WholeFileSignerOutputStream
+write	depmod/signature/signapk/SignApk.java	/^        public void write(byte[] b, int off, int len) throws IOException {$/;"	m	class:SignApk.CountOutputStream
+write	depmod/signature/signapk/SignApk.java	/^        public void write(byte[] b, int off, int len) throws IOException {$/;"	m	class:SignApk.WholeFileSignerOutputStream
+write	depmod/signature/signapk/SignApk.java	/^        public void write(int b) throws IOException {$/;"	m	class:SignApk.CountOutputStream
+write	depmod/signature/signapk/SignApk.java	/^        public void write(int b) throws IOException {$/;"	m	class:SignApk.WholeFileSignerOutputStream
+writeSignatureBlock	depmod/signature/signapk/SignApk.java	/^        public void writeSignatureBlock(ByteArrayOutputStream temp)$/;"	m	class:SignApk.CMSSigner
+writeSignatureBlock	depmod/signature/signapk/SignApk.java	/^    private static void writeSignatureBlock($/;"	m	class:SignApk	file:
+writeSignatureFile	depmod/signature/signapk/SignApk.java	/^    private static void writeSignatureFile(Manifest manifest, OutputStream out)$/;"	m	class:SignApk	file:
+DSAPARAM	depmod/signature/signapk/test/run	/^DSAPARAM := out\/dsaparam$/;"	m
+SIGNAPK_DEBUG	depmod/signature/signapk/test/run	/^	SIGNAPK_DEBUG=1 \\$/;"	m
+cert	depmod/signature/signapk/test/run	/^cert := out\/key1.pem$/;"	m
+package	depmod/signature/signapk/test/run	/^package := NotePad.apk$/;"	m
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+bytes2human	lib/base.py	/^def bytes2human(n):$/;"	f
+decorator	lib/base.py	/^    def decorator(func):$/;"	f	function:struct
+enum_f1	lib/base.py	/^def enum_f1(**enums):$/;"	f
+enum_f2	lib/base.py	/^def enum_f2(*sequential, **named):$/;"	f
+human2bytes	lib/base.py	/^def human2bytes(sv):$/;"	f
+is_one_empty	lib/base.py	/^def is_one_empty(*args):$/;"	f
+re	lib/base.py	/^import re$/;"	i
+str2int	lib/base.py	/^def str2int(snum):$/;"	f
+struct	lib/base.py	/^def struct(*name):$/;"	f
+wrapper	lib/base.py	/^        def wrapper(*args, **kw):$/;"	f	function:struct.decorator
+Device	lib/dev.py	/^class Device(object):$/;"	c
+Devinfo	lib/dev.py	/^    class Devinfo(object):$/;"	c	class:Device
+Partition	lib/dev.py	/^    class Partition(object):$/;"	c	class:Device
+__init__	lib/dev.py	/^        def __init__(self, *value):$/;"	m	class:Device.Devinfo
+__init__	lib/dev.py	/^        def __init__(self, *value):$/;"	m	class:Device.Partition
+__init__	lib/dev.py	/^    def __init__(self, *value):$/;"	m	class:Device
+base	lib/dev.py	/^from otapackage.lib import base, ini, log, image$/;"	i
+config	lib/dev.py	/^from otapackage import config$/;"	i
+et	lib/dev.py	/^import xml.etree.cElementTree as et$/;"	i
+etree	lib/dev.py	/^import xml.etree.cElementTree as et$/;"	i
+generate	lib/dev.py	/^    def generate(self):$/;"	m	class:Device
+generate_config	lib/dev.py	/^        def generate_config(self, element):$/;"	m	class:Device.Partition
+get_available_mapped_content_size	lib/dev.py	/^        def get_available_mapped_content_size(self, ftype):$/;"	m	class:Device.Partition
+get_nand_reserved_size	lib/dev.py	/^        def get_nand_reserved_size(self):$/;"	m	class:Device.Devinfo
+get_object_from_file	lib/dev.py	/^    def get_object_from_file(cls):$/;"	m	class:Device
+image	lib/dev.py	/^from otapackage.lib import base, ini, log, image$/;"	i
+ini	lib/dev.py	/^from otapackage.lib import base, ini, log, image$/;"	i
+is_mmaped_in	lib/dev.py	/^        def is_mmaped_in(self, start, size):$/;"	m	class:Device.Partition
+judge	lib/dev.py	/^        def judge(self):$/;"	m	class:Device.Partition
+judge	lib/dev.py	/^    def judge(self):$/;"	m	class:Device
+judge_partititon_mapped	lib/dev.py	/^    def judge_partititon_mapped(self, map_start, map_size, ftype):$/;"	m	class:Device
+log	lib/dev.py	/^from otapackage.lib import base, ini, log, image$/;"	i
+os	lib/dev.py	/^import os$/;"	i
+partition_cnt	lib/dev.py	/^    partition_cnt = 0$/;"	v	class:Device
+printer	lib/dev.py	/^    printer = None$/;"	v	class:Device
+re	lib/dev.py	/^import re$/;"	i
+sys	lib/dev.py	/^import sys$/;"	i
+xml	lib/dev.py	/^import xml.etree.cElementTree as et$/;"	i
+get_size	lib/file.py	/^def get_size(path):$/;"	f
+is_readable	lib/file.py	/^def is_readable(path):$/;"	f
+is_writeable	lib/file.py	/^def is_writeable(path, check_parent=False):$/;"	f
+os	lib/file.py	/^import os$/;"	i
+split	lib/file.py	/^def split(fromfile, todir, chunksize, func):$/;"	f
+Image	lib/image.py	/^class Image(object):$/;"	c
+Imageinfo	lib/image.py	/^    class Imageinfo(object):$/;"	c	class:Image
+UpdateMode	lib/image.py	/^    class UpdateMode(object):$/;"	c	class:Image
+__init__	lib/image.py	/^        def __init__(self, *value):$/;"	m	class:Image.Imageinfo
+__init__	lib/image.py	/^        def __init__(self, *value):$/;"	m	class:Image.UpdateMode
+__init__	lib/image.py	/^    def __init__(self, *value):$/;"	m	class:Image
+base	lib/image.py	/^from otapackage.lib import base, ini, file, log$/;"	i
+config	lib/image.py	/^from otapackage import config$/;"	i
+devctls	lib/image.py	/^    devctls = config.devctls$/;"	v	class:Image
+et	lib/image.py	/^import xml.etree.cElementTree as et$/;"	i
+etree	lib/image.py	/^import xml.etree.cElementTree as et$/;"	i
+file	lib/image.py	/^from otapackage.lib import base, ini, file, log$/;"	i
+generate	lib/image.py	/^        def generate(self, element):$/;"	m	class:Image.Imageinfo
+generate	lib/image.py	/^    def generate(self):$/;"	m	class:Image
+generate_config	lib/image.py	/^        def generate_config(self, element):$/;"	m	class:Image.Imageinfo
+generate_process	lib/image.py	/^        def generate_process(self, imagename):$/;"	m	class:Image.Imageinfo
+get_default	lib/image.py	/^        def get_default(cls, imagename, imagetype,$/;"	m	class:Image.UpdateMode
+get_image_size	lib/image.py	/^    def get_image_size(cls, imagename):$/;"	m	class:Image
+get_image_total_cnt	lib/image.py	/^    def get_image_total_cnt(cls):$/;"	m	class:Image
+get_object_from_file	lib/image.py	/^    def get_object_from_file(cls):$/;"	m	class:Image
+get_slice_size	lib/image.py	/^        def get_slice_size(cls, imagetype, size):$/;"	m	class:Image.UpdateMode
+imagesum	lib/image.py	/^    imagesum = config.output_pack_config_index$/;"	v	class:Image
+imagetypes	lib/image.py	/^    imagetypes = config.img_types$/;"	v	class:Image
+ini	lib/image.py	/^from otapackage.lib import base, ini, file, log$/;"	i
+judge	lib/image.py	/^        def judge(self):$/;"	m	class:Image.Imageinfo
+judge	lib/image.py	/^    def judge(self):$/;"	m	class:Image
+log	lib/image.py	/^from otapackage.lib import base, ini, file, log$/;"	i
+os	lib/image.py	/^import os$/;"	i
+printer	lib/image.py	/^    printer = None$/;"	v	class:Image
+shutil	lib/image.py	/^import shutil$/;"	i
+sys	lib/image.py	/^import sys$/;"	i
+updatemodes	lib/image.py	/^    updatemodes = config.updatemodes$/;"	v	class:Image
+xml	lib/image.py	/^import xml.etree.cElementTree as et$/;"	i
+ConfigParser	lib/ini.py	/^import ConfigParser$/;"	i
+ParserIni	lib/ini.py	/^class ParserIni:$/;"	c
+__init__	lib/ini.py	/^    def __init__(self, path):$/;"	m	class:ParserIni
+get	lib/ini.py	/^    def get(self, field, key):$/;"	m	class:ParserIni
+get_items	lib/ini.py	/^    def get_items(self, item_name):$/;"	m	class:ParserIni
+get_options	lib/ini.py	/^    def get_options(self, section_name):$/;"	m	class:ParserIni
+get_sections	lib/ini.py	/^    def get_sections(self):$/;"	m	class:ParserIni
+set	lib/ini.py	/^    def set(self, filed, key, value):$/;"	m	class:ParserIni
+Logger	lib/log.py	/^class Logger:$/;"	c
+RotatingFileHandler	lib/log.py	/^from logging.handlers import RotatingFileHandler$/;"	i
+config	lib/log.py	/^from otapackage import config$/;"	i
+get_logger	lib/log.py	/^    def get_logger(cls, logname):$/;"	m	class:Logger
+levels	lib/log.py	/^    levels = {"n": logging.NOTSET,$/;"	v	class:Logger
+log_backup_count	lib/log.py	/^    log_backup_count = 5$/;"	v	class:Logger
+log_file	lib/log.py	/^    log_file = config.log_logname$/;"	v	class:Logger
+log_max_byte	lib/log.py	/^    log_max_byte = config.log_size$/;"	v	class:Logger
+logger	lib/log.py	/^    logger = {logger_types[0]: logger_file,$/;"	v	class:Logger
+logger_console	lib/log.py	/^    logger_console = None$/;"	v	class:Logger
+logger_file	lib/log.py	/^    logger_file = None$/;"	v	class:Logger
+logger_level_default	lib/log.py	/^    logger_level_default = {logger_types[0]: levels['w'],$/;"	v	class:Logger
+logger_types	lib/log.py	/^    logger_types = ("file", "console")$/;"	v	class:Logger
+logging	lib/log.py	/^import logging$/;"	i
+prompt	lib/log.py	/^    prompt = config.log_prompt$/;"	v	class:Logger
+set_level	lib/log.py	/^    def set_level(cls, logname, levelname):$/;"	m	class:Logger
+Maker	mkotapackage.py	/^class Maker(object):$/;"	c
+__init__	mkotapackage.py	/^    def __init__(self):$/;"	m	class:Maker
+argparse	mkotapackage.py	/^import argparse$/;"	i
+base	mkotapackage.py	/^from otapackage.lib import base, log, image, dev$/;"	i
+cmdline_parse	mkotapackage.py	/^    def cmdline_parse(self):$/;"	m	class:Maker
+config	mkotapackage.py	/^from otapackage import config$/;"	i
+customer_types	mkotapackage.py	/^    customer_types = []$/;"	v	class:Maker
+dev	mkotapackage.py	/^from otapackage.lib import base, log, image, dev$/;"	i
+et	mkotapackage.py	/^import xml.etree.cElementTree as et$/;"	i
+etree	mkotapackage.py	/^import xml.etree.cElementTree as et$/;"	i
+generate	mkotapackage.py	/^    def generate(self, list_devs):$/;"	m	class:Maker
+get_customer_effective_types	mkotapackage.py	/^    def get_customer_effective_types(self):$/;"	m	class:Maker
+image	mkotapackage.py	/^from otapackage.lib import base, log, image, dev$/;"	i
+judge	mkotapackage.py	/^    def judge(self):$/;"	m	class:Maker
+log	mkotapackage.py	/^from otapackage.lib import base, log, image, dev$/;"	i
+main	mkotapackage.py	/^def main():$/;"	f
+os	mkotapackage.py	/^import os$/;"	i
+pack	mkotapackage.py	/^    def pack(self):$/;"	m	class:Maker
+printer	mkotapackage.py	/^    printer = None$/;"	v	class:Maker
+shutil	mkotapackage.py	/^import shutil$/;"	i
+start	mkotapackage.py	/^    def start(self):$/;"	m	class:Maker
+sys	mkotapackage.py	/^import sys$/;"	i
+xml	mkotapackage.py	/^import xml.etree.cElementTree as et$/;"	i

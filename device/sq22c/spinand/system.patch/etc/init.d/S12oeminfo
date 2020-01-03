@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# Read oeminfo
+#
+
+PARTITION_FILE=/dev/mtdblock2
+OEMINFO_DIR=/etc/oeminfo
+SN_FILE=sn
+MAC_FILE=mac
+
+if [ -d $OEMINFO_DIR ];then
+    rm -rf $OEMINFO_DIR
+fi
+
+mkdir $OEMINFO_DIR
+
+touch ${OEMINFO_DIR}/${SN_FILE}
+mtd_debug read ${PARTITION_FILE} 0 20 ${OEMINFO_DIR}/${SN_FILE}
+echo "read sn success!"
+
+touch ${OEMINFO_DIR}/${MAC_FILE}
+mtd_debug read ${PARTITION_FILE} 0x40000 12 ${OEMINFO_DIR}/${MAC_FILE}
+echo "read mac success!"
